@@ -13,7 +13,7 @@ function decodeRuuviTags(manufacturerData) {
     return null;
   }
 
-  const data = manufacturerData.subarray(3);
+  const data = manufacturerData.slice(3);
 
   const temperatureRaw = data.readInt16BE(0);
   const temperature = temperatureRaw === 0x8000 ? null : temperatureRaw * 0.005;

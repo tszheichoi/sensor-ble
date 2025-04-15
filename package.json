@@ -1,0 +1,17 @@
+{
+  "name": "sensor-ble",
+  "type": "module",
+  "version": "0.0.1",
+  "license": "GPL-3.0-only",
+  "main": "main.js",
+  "scripts": {
+    "start": "node harness/main.js",
+    "test": "node harness/test.js"
+  },
+  "author": "Kelvin Choi",
+  "description": "Utilities to connect & decode BLE sensor data",
+  "dependencies": {},
+  "devDependencies": {
+    "@abandonware/noble": "^1.9.2-26"
+  }
+}

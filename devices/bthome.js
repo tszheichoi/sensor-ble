@@ -5,12 +5,13 @@
  */
 function decodeBTHome(serviceData) {
   if (
-    serviceData.length < 9 ||
-    (serviceData[0] & 0xe5) != 0x40
+    serviceData.length < 7 || // too short
+    serviceData[0] & 0x01  || // encrypted data not supported
+    ((serviceData[0] & 0x60) >> 5) != 2 // not BTHome v2
   ) {
-    // Not BTHome V2
     return null;
   }
+
   // just indicate match for now
   return {
     BTHomeFound: true

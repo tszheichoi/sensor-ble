@@ -47,7 +47,9 @@ Each device decoder must export:
    - `decoderName`: A unique identifier for the decoder
    - `name` (optional): If specified, the BLE device name must match this for the decoder to apply
    - `manufacturer` (optional): If specified, the BLE manufacturer data must begin with this 2-byte manufacturer ID (in hex string form e.g. "9904")
-   - `advertisementDecode` (optional): Function to decode BLE advertisements
+    - `serviceUUID` (optional): If specified, advertisement must contain this service UUID to match (in hex string form e.g. "fcd2")
+   - `advertisementDecode` (optional): Function to decode BLE manufacturer data in advertisements
+   - `servicedataDecode` (optional): Function to decode service data in BLE advertisements if the `serviceUUID` matches
    - `start` (optional): Function called to start data collection from the device, typically for sending the command to start data streaming
    - `stop` (optional): Function to stop data collection, typically for sending the command to stop data streaming
    - `notify` (optional): Listeners to set up given a serviceUUID and characteristicUUID, these may return decoded data (or null when listening for other information, such as the device sensor scale factor)

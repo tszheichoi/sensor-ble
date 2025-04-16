@@ -23,6 +23,15 @@ async function run() {
         );
         logTest(test, decoder, decoded);
       }
+      if (
+        given.serviceData != null &&
+        decoder.servicedataDecode != null
+      ) {
+        const decoded = decoder.servicedataDecode(
+          Buffer.from(given.serviceData, "hex")
+        );
+        logTest(test, decoder, decoded);
+      }
       if (given.data != null) {
         let mostRecentDecoded;
         for (const message of given.data) {

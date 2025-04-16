@@ -70,6 +70,18 @@ async function main() {
             console.log("Decoded data:", decoded);
           }
         }
+        if (decoder.servicedataDecode) {
+          const decoded = decoder.servicedataDecode(
+            advertisement.serviceData[0].data
+          );
+          if (decoded) {
+            console.log(
+              "Got data from device:",
+              advertisement.serviceData[0].data.toString("hex")
+            );
+            console.log("Decoded data:", decoded);
+          }
+        }
         if (decoder.start) {
           noble.stopScanning(); // cannot scan and connect at the same time
           startStreaming(peripheral, decoder);
@@ -169,6 +181,15 @@ function isDecoderValid(decoder, advertisement) {
   if (decoder.manufacturer && manufacturerData) {
     const manufacturerId = manufacturerData.subarray(0, 2).toString("hex");
     return decoder.manufacturer === manufacturerId;
+  }
+
+  if (decoder.serviceUUID && advertisement.serviceData) {
+    const serviceData = advertisement.serviceData.find(
+      (sd) => sd.uuid === decoder.serviceUUID
+    );
+    if (serviceData) {
+      return true;
+    }
   }
   return false;
 }

@@ -22,11 +22,18 @@ async function main() {
   decoders.forEach((d) => {
     console.log(`- ${d.decoder.decoderName}`);
   });
+
   /** @type {Decoder | undefined} */
   let decoder = null;
-  const input = await ask(
-    "\nEnter a decoder name or press enter to scan all devices: "
-  );
+  let input = process.argv[2]; // Get decoder name from command line argument
+
+  if (!input) {
+    // If no command line argument, ask interactively
+    input = await ask(
+      "\nEnter a decoder name or press enter to scan all devices: "
+    );
+  }
+
   if (input) {
     const decoderModule = decoders.find((d) => d.decoder.decoderName === input);
     if (decoderModule) {

@@ -22,11 +22,18 @@ async function main() {
   decoders.forEach((d) => {
     console.log(`- ${d.decoder.decoderName}`);
   });
+
   /** @type {Decoder | undefined} */
   let decoder = null;
-  const input = await ask(
-    "\nEnter a decoder name or press enter to scan all devices: "
-  );
+  let input = process.argv[2]; // Get decoder name from command line argument
+
+  if (!input) {
+    // If no command line argument, ask interactively
+    input = await ask(
+      "\nEnter a decoder name or press enter to scan all devices: "
+    );
+  }
+
   if (input) {
     const decoderModule = decoders.find((d) => d.decoder.decoderName === input);
     if (decoderModule) {
@@ -66,6 +73,18 @@ async function main() {
             console.log(
               "Got data from device:",
               advertisement.manufacturerData.toString("hex")
+            );
+            console.log("Decoded data:", decoded);
+          }
+        }
+        if (decoder.servicedataDecode) {
+          const decoded = decoder.servicedataDecode(
+            advertisement.serviceData[0].data
+          );
+          if (decoded) {
+            console.log(
+              "Got data from device:",
+              advertisement.serviceData[0].data.toString("hex")
             );
             console.log("Decoded data:", decoded);
           }
@@ -169,6 +188,15 @@ function isDecoderValid(decoder, advertisement) {
   if (decoder.manufacturer && manufacturerData) {
     const manufacturerId = manufacturerData.subarray(0, 2).toString("hex");
     return decoder.manufacturer === manufacturerId;
+  }
+
+  if (decoder.serviceUUID && advertisement.serviceData) {
+    const serviceData = advertisement.serviceData.find(
+      (sd) => sd.uuid === decoder.serviceUUID
+    );
+    if (serviceData) {
+      return true;
+    }
   }
   return false;
 }

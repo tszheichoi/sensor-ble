@@ -6,6 +6,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node harness/main.js",
+    "start bthome": "node harness/main.js bthome",
     "test": "node harness/test.js"
   },
   "author": "Kelvin Choi",

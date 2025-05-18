@@ -58,6 +58,29 @@ Each device decoder must export:
 
 2. A `tests` array containing test cases to validate the decoder functionality. The test array differs depending on if the decoder decodes advertisement data or is streaming. See [ruuvi.js](devices/ruuvi.js) for advertisement decoding, or [muse_v3.js](devices/muse_v3.js) for streaming data.
 
+### Typical Workflow
+
+The expected workflow followed by Sensor Logger (or any client) is outlined below:
+
+1. Identify the Decoder: Use either the `manufacturer` or `name` attribute to locate the appropriate decoder for the target device.
+2. Handle Advertised Data: For data broadcasted passively, use the `advertisementDecode` method to interpret the advertised information.
+3. Manage Active Data Streams: For devices requiring explicit interaction:
+   - Use the `start` method to initiate data collection.
+   - The `notify` method will listen for incoming data streams.
+   - The decoded data is then processed and stored by the data logger (e.g. Sensor Logger).
+   - When data collection is complete or no longer needed, use the `stop` method to terminate the data stream and release resources.
+
+### Decoded Data Conventions
+
+When data is decoded (via advertisementDecode or notify), the column names used should be consistent with the following conventions. The intention is for the column names to be self-documenting for visualization, even in the absence of a schema (e.g. CSV).
+
+- Use column name `group_name_unit` (e.g. accelerometer_x_mg) when multiple values are decoded under a group (e.g. accelerometer).
+- Use column name `name_unit` (e.g. temperature_c) when a single value is decoded and no others are in the group.
+- Use `unit` as "dimensionless" when the value has no unit.
+- Use column name `name` (without underscoes) when the value is not expected to be shown on a plot, e.g. timestamp
+- Where possible, the decoded data should include a timestamp if the device sends one.
+- Do not use additional underscores in column names, e.g. `hdr_accelerometer_x_mg` is not allowed by convention. Instead use `hdrAccelerometer_x_mg` so the group is clear.
+
 ### Project Structure
 
 This repository is structured in two parts:

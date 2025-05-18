@@ -23,10 +23,7 @@ async function run() {
         );
         logTest(test, decoder, decoded);
       }
-      if (
-        given.serviceData != null &&
-        decoder.servicedataDecode != null
-      ) {
+      if (given.serviceData != null && decoder.servicedataDecode != null) {
         const decoded = decoder.servicedataDecode(
           Buffer.from(given.serviceData, "hex")
         );
@@ -34,6 +31,9 @@ async function run() {
       }
       if (given.data != null) {
         let mostRecentDecoded;
+        decoder.start("test-device", false, {
+          write: () => {},
+        });
         for (const message of given.data) {
           const handler = decoder.notify.find(
             (n) =>

@@ -5,13 +5,6 @@
  */
 
 /**
- * A group of related sensor fields for plotting.
- * @typedef {Object} Plottable
- * @property {string | null} unit - Unit of measurement (e.g., "°C", "mg"), or null if not applicable.
- * @property {string[]} fields - Field names associated with this measurement type.
- */
-
-/**
  * @callback WriteFunction
  * @param {string} deviceId - ID of the device.
  * @param {string} serviceUuid - UUID of the service.
@@ -64,7 +57,6 @@
  * @property {(advertisement: Buffer) => SensorValues | undefined} [advertisementDecode] - Optional decode function for BLE advertisements.
  * @property {string | undefined} units - Description of unit semantics.
  * @property {string | undefined} frequency - Description of frequency semantics.
- * @property {{ [key: string]: Plottable }} plottables - Map of plottable groups.
  * @property {StartFunction | undefined} start - Function called when starting the device.
  * @property {StopFunction | undefined} stop - Function called when stopping the device.
  * @property {NotifyEntry[] | undefined} notify - Array of objects defining notification characteristics.

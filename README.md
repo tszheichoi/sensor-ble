@@ -47,7 +47,7 @@ Each device decoder must export:
    - `decoderName`: A unique identifier for the decoder
    - `name` (optional): If specified, the BLE device name must match this for the decoder to apply
    - `manufacturer` (optional): If specified, the BLE manufacturer data must begin with this 2-byte manufacturer ID (in hex string form e.g. "9904")
-    - `serviceUUID` (optional): If specified, advertisement must contain this service UUID to match (in hex string form e.g. "fcd2")
+   - `serviceUUID` (optional): If specified, advertisement must contain this service UUID to match (in hex string form e.g. "fcd2")
    - `advertisementDecode` (optional): Function to decode BLE manufacturer data in advertisements
    - `servicedataDecode` (optional): Function to decode service data in BLE advertisements if the `serviceUUID` matches
    - `start` (optional): Function called to start data collection from the device, typically for sending the command to start data streaming
@@ -55,7 +55,6 @@ Each device decoder must export:
    - `notify` (optional): Listeners to set up given a serviceUUID and characteristicUUID, these may return decoded data (or null when listening for other information, such as the device sensor scale factor)
    - `units` (optional): Description of unit semantics
    - `frequency` (optional): Description of sampling frequency
-   - `plottables`: Map of related sensor fields for plotting
 
 2. A `tests` array containing test cases to validate the decoder functionality. The test array differs depending on if the decoder decodes advertisement data or is streaming. See [ruuvi.js](devices/ruuvi.js) for advertisement decoding, or [muse_v3.js](devices/muse_v3.js) for streaming data.
 

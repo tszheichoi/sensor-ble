@@ -53,16 +53,16 @@ function decodeRuuviTags(manufacturerData) {
     ?.join(":");
 
   return {
-    temperature,
-    humidity,
-    pressure,
-    accel_x: accelerationX,
-    accel_y: accelerationY,
-    accel_z: accelerationZ,
-    voltage,
-    txPower,
-    movement,
-    measurementSequence,
+    temperature_C: temperature,
+    "humidity_%": humidity,
+    pressure_Pa: pressure,
+    acceleration_x_mg: accelerationX,
+    acceleration_y_mg: accelerationY,
+    acceleration_z_mg: accelerationZ,
+    voltage_mV: voltage,
+    txPower_dBm: txPower,
+    movement_dimensionless: movement,
+    measurementSequence_dimensionless: measurementSequence,
     macAddress,
   };
 }
@@ -75,40 +75,6 @@ export const decoder = {
   advertisementDecode: decodeRuuviTags,
   units:
     "Values will be in the appropriate units based on documentation: https://github.com/ruuvi/ruuvi-sensor-protocols/blob/master/dataformat_05.md",
-  plottables: {
-    Acceleration: {
-      unit: "mg",
-      fields: ["accel_x", "accel_y", "accel_z"],
-    },
-    Temperature: {
-      unit: "°C",
-      fields: ["temperature"],
-    },
-    Humidity: {
-      unit: "%",
-      fields: ["humidity"],
-    },
-    Pressure: {
-      unit: "Pa",
-      fields: ["pressure"],
-    },
-    Voltage: {
-      unit: "mV",
-      fields: ["voltage"],
-    },
-    TxPower: {
-      unit: "dBm",
-      fields: ["txPower"],
-    },
-    Movement: {
-      unit: null,
-      fields: ["movement"],
-    },
-    MeasurementSequence: {
-      unit: null,
-      fields: ["measurementSequence"],
-    },
-  },
 };
 
 /** @type Test[] */
@@ -119,16 +85,16 @@ export const tests = [
       manufacturerData: "99040512FC5394C37C0004FFFC040CAC364200CDCBB8334C884F",
     },
     expected: {
-      temperature: 24.3,
-      humidity: 53.49,
-      pressure: 100044,
-      accel_x: 4,
-      accel_y: -4,
-      accel_z: 1036,
-      voltage: 2977,
-      txPower: 4,
-      movement: 66,
-      measurementSequence: 205,
+      temperature_C: 24.3,
+      "humidity_%": 53.49,
+      pressure_Pa: 100044,
+      acceleration_x_mg: 4,
+      acceleration_y_mg: -4,
+      acceleration_z_mg: 1036,
+      voltage_mV: 2977,
+      txPower_dBm: 4,
+      movement_dimensionless: 66,
+      measurementSequence_dimensionless: 205,
       macAddress: "cb:b8:33:4c:88:4f",
     },
   },
@@ -137,16 +103,16 @@ export const tests = [
       manufacturerData: "990405138effffffff0000ffdc03f09f169de950c50782d95bc7",
     },
     expected: {
-      temperature: 25.03,
-      humidity: null,
-      pressure: null,
-      accel_x: 0,
-      accel_y: -36,
-      accel_z: 1008,
-      voltage: 2872,
-      txPower: 4,
-      movement: 157,
-      measurementSequence: 59728,
+      temperature_C: 25.03,
+      "humidity_%": null,
+      pressure_Pa: null,
+      acceleration_x_mg: 0,
+      acceleration_y_mg: -36,
+      acceleration_z_mg: 1008,
+      voltage_mV: 2872,
+      txPower_dBm: 4,
+      movement_dimensionless: 157,
+      measurementSequence_dimensionless: 59728,
       macAddress: "c5:07:82:d9:5b:c7",
     },
   },

@@ -11,20 +11,15 @@ function decodeBTHome(data) {
   if (
     data.length < 7 || // too short
     data[0] & 0x01 || // encrypted data not supported
-    (data[0] & 0x60) >> 5 != 2 // not BTHome v2
+    ((data[0] & 0x60) >> 5) != 2 // not BTHome v2
   ) {
     return null;
   }
-  const mac_included = (data[0] & 0x02) != 0;
+  const mac_included = ((data[0] & 0x02) != 0);
   let mac_address = null;
   let packetId = null;
   if (mac_included) {
-    mac_address = data
-      .slice(1, 7)
-      .reverse()
-      .toString("hex")
-      .match(/.{1,2}/g)
-      ?.join(":");
+    mac_address = data.slice(1, 7).reverse().toString("hex").match(/.{1,2}/g)?.join(":");
     data = data.slice(7);
   } else {
     data = data.slice(1);
@@ -38,7 +33,8 @@ function decodeBTHome(data) {
     if (objectId === 0x00) {
       packetId = data[1];
       data = data.slice(2);
-    } else if (multilevelSensorDefinitions.has(objectId)) {
+    }
+    else if (multilevelSensorDefinitions.has(objectId)) {
       const def = multilevelSensorDefinitions.get(objectId);
       let value = def.signed
         ? data.readIntLE(1, def.size)
@@ -55,7 +51,8 @@ function decodeBTHome(data) {
       }
       multilevelSensors.push(sensorData);
       data = data.slice(1 + def.size);
-    } else if (binarySensorDefinitions.has(objectId)) {
+    }
+    else if (binarySensorDefinitions.has(objectId)) {
       const def = binarySensorDefinitions.get(objectId);
       const sensorData = {
         label: def.label,
@@ -65,7 +62,8 @@ function decodeBTHome(data) {
       };
       binarySensors.push(sensorData);
       data = data.slice(2);
-    } else if (objectId === 0x3a) {
+    }
+    else if (objectId === 0x3a) {
       // button event
       const eventId = data[1];
       const event = {
@@ -83,7 +81,8 @@ function decodeBTHome(data) {
       }
       events.push(event);
       data = data.slice(2);
-    } else if (objectId === 0x3c) {
+    }
+    else if (objectId === 0x3c) {
       // button event
       const eventId = data[1];
       const event = {
@@ -98,7 +97,8 @@ function decodeBTHome(data) {
       }
       events.push(event);
       data = data.slice(3);
-    } else if (objectId === 0x50) {
+    }
+    else if (objectId === 0x50) {
       // unix timestamp UTC
       const timestamp = data.readUInt32LE(1);
       specialSensors.push({
@@ -106,7 +106,8 @@ function decodeBTHome(data) {
         value: new Date(timestamp * 1000),
       });
       data = data.slice(5);
-    } else if (objectId === 0x53) {
+    }
+    else if (objectId === 0x53) {
       // text sensor (utf8)
       const length = data[1];
       const value = data.slice(2, 2 + length).toString("utf8");
@@ -115,16 +116,18 @@ function decodeBTHome(data) {
         value,
       });
       data = data.slice(2 + length);
-    } else if (objectId === 0x54) {
+    }
+    else if (objectId === 0x54) {
       // raw sensor
       const length = data[1];
       const value = data.slice(2, 2 + length);
       specialSensors.push({
         type: "raw",
-        value: value.toString("hex"),
+        value: value.toString('hex'),
       });
       data = data.slice(2 + length);
-    } else {
+    }
+    else {
       console.log(`Unsupported BTHome object ID ${objectId.toString(16)}`);
       return {};
     }
@@ -430,9 +433,7 @@ const multilevelSensorsArray = [
     unit: "L",
   },
 ];
-const multilevelSensorDefinitions = new Map(
-  multilevelSensorsArray.map((def) => [def.id, def])
-);
+const multilevelSensorDefinitions = new Map(multilevelSensorsArray.map((def) => [def.id, def]));
 const binarySensorsArray = [
   { id: 0x15, label: "battery", states: { false: "Normal", true: "Low" } },
   {
@@ -507,9 +508,7 @@ const binarySensorsArray = [
   },
   { id: 0x2d, label: "window", states: { false: "Closed", true: "Open" } },
 ];
-const binarySensorDefinitions = new Map(
-  binarySensorsArray.map((def) => [def.id, def])
-);
+const binarySensorDefinitions = new Map(binarySensorsArray.map((def) => [def.id, def]));
 
 /** @type {Decoder} */
 export const decoder = {
@@ -519,6 +518,10 @@ export const decoder = {
   servicedataDecode: decodeBTHome,
   units:
     "Values will be in the appropriate units based on documentation: https://bthome.io/format/",
+  plottables: {
+    // can only be determined at runtime after parsing an ad from a particular device
+    // also, valid only for the particular device
+  },
 };
 
 /** @type Test[] */
@@ -532,14 +535,11 @@ export const tests = [
     expected: {
       multilevelSensors: [],
       binarySensors: [],
-      specialSensors: [
-        { type: "text", value: "ABC" },
-        { type: "raw", value: "313233" },
-      ],
+      specialSensors: [{ type: 'text', value: 'ABC' }, { type: 'raw', value: '313233' }],
       events: [
-        { type: "button", event: "press" },
-        { type: "dimmer", event: { event: "rotate right", steps: 6 } },
-      ],
+        { type: 'button', event: 'press' },
+        { type: 'dimmer', event: { event: 'rotate right', steps: 6 } }
+      ]
     },
   },
   {
@@ -547,46 +547,46 @@ export const tests = [
       serviceData: "40000902ac0d03a00f04f28f0105d91300100112b804",
     },
     expected: {
-      packetId: 9,
-      multilevelSensors: [
+      "packetId": 9,
+      "multilevelSensors": [
         {
-          label: "temperature",
-          value: 35,
-          unit: "°C",
+          "label": "temperature",
+          "value": 35,
+          "unit": "°C"
         },
         {
-          label: "humidity",
-          value: 40,
-          unit: "%",
+          "label": "humidity",
+          "value": 40,
+          "unit": "%"
         },
         {
-          label: "pressure",
-          value: 1023.86,
-          unit: "hPa",
+          "label": "pressure",
+          "value": 1023.86,
+          "unit": "hPa"
         },
         {
-          label: "illuminance",
-          value: 50.81,
-          unit: "lux",
+          "label": "illuminance",
+          "value": 50.81,
+          "unit": "lux"
         },
         {
-          label: "co2",
-          value: 1208,
-          unit: "ppm",
-        },
+          "label": "co2",
+          "value": 1208,
+          "unit": "ppm"
+        }
       ],
-      binarySensors: [
+      "binarySensors": [
         {
-          label: "power",
-          value: true,
-          states: {
-            false: "Off",
-            true: "On",
-          },
-        },
+          "label": "power",
+          "value": true,
+          "states": {
+            "false": "Off",
+            "true": "On"
+          }
+        }
       ],
-      specialSensors: [],
-      events: [],
+      "specialSensors": [],
+      "events": []
     },
   },
   {
@@ -596,127 +596,126 @@ export const tests = [
     },
     expected: {
       packetId: 202,
-      multilevelSensors: [{ label: "battery", value: 100, unit: "%" }],
+      multilevelSensors: [{ label: 'battery', value: 100, unit: '%' }],
       binarySensors: [],
       specialSensors: [],
-      events: [{ type: "button" }],
-    },
+      events: [{ type: 'button' }]
+    }
   },
   {
     given: {
       //  DIY sensor extended advertising with pid
-      serviceData:
-        "40004a03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
+      serviceData: "40004a03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
     },
     expected: {
       packetId: 74,
       multilevelSensors: [
-        { label: "humidity", value: 40, unit: "%" },
-        { label: "pressure", value: 1023.86, unit: "hPa" },
+        { label: 'humidity', value: 40, unit: '%' },
+        { label: 'pressure', value: 1023.86, unit: 'hPa' }
       ],
       binarySensors: [],
       specialSensors: [
-        { type: "text", value: "BLABLAddadasdasXYZ" },
-        { type: "raw", value: "313233" },
+        { type: 'text', value: 'BLABLAddadasdasXYZ' },
+        { type: 'raw', value: '313233' }
       ],
-      events: [],
-    },
+      events: []
+    }
   },
   {
     given: {
       //  DIY sensor extended advertising with pid and mac
-      serviceData:
-        "4248ca433932a5002f03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
+      serviceData: "4248ca433932a5002f03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
     },
     expected: {
       packetId: 47,
-      mac_address: "a5:32:39:43:ca:48",
+      mac_address: 'a5:32:39:43:ca:48',
       multilevelSensors: [
-        { label: "humidity", value: 40, unit: "%" },
-        { label: "pressure", value: 1023.86, unit: "hPa" },
+        { label: 'humidity', value: 40, unit: '%' },
+        { label: 'pressure', value: 1023.86, unit: 'hPa' }
       ],
       binarySensors: [],
       specialSensors: [
-        { type: "text", value: "BLABLAddadasdasXYZ" },
-        { type: "raw", value: "313233" },
+        { type: 'text', value: 'BLABLAddadasdasXYZ' },
+        { type: 'raw', value: '313233' }
       ],
-      events: [],
+      events: []
     },
   },
   {
     given: {
       //  DIY sensor extended advertising with pid and mac, lots of fields
-      serviceData:
-        "4248ca433932a5002c02ac0d03a00f04f28f0105d91300100112b804135e013a013c02065312424c41424c4164646164617364617358595a5403313233",
+      serviceData: "4248ca433932a5002c02ac0d03a00f04f28f0105d91300100112b804135e013a013c02065312424c41424c4164646164617364617358595a5403313233",
     },
     expected: {
-      packetId: 44,
-      mac_address: "a5:32:39:43:ca:48",
-      multilevelSensors: [
+      "packetId": 44,
+      "mac_address": "a5:32:39:43:ca:48",
+      "multilevelSensors": [
         {
-          label: "temperature",
-          value: 35,
-          unit: "°C",
+          "label": "temperature",
+          "value": 35,
+          "unit": "°C"
         },
         {
-          label: "humidity",
-          value: 40,
-          unit: "%",
+          "label": "humidity",
+          "value": 40,
+          "unit": "%"
         },
         {
-          label: "pressure",
-          value: 1023.86,
-          unit: "hPa",
+          "label": "pressure",
+          "value": 1023.86,
+          "unit": "hPa"
         },
         {
-          label: "illuminance",
-          value: 50.81,
-          unit: "lux",
+          "label": "illuminance",
+          "value": 50.81,
+          "unit": "lux"
         },
         {
-          label: "co2",
-          value: 1208,
-          unit: "ppm",
+          "label": "co2",
+          "value": 1208,
+          "unit": "ppm"
         },
         {
-          label: "tvoc",
-          value: 350,
-          unit: "ug/m3",
-        },
+          "label": "tvoc",
+          "value": 350,
+          "unit": "ug/m3"
+        }
       ],
-      binarySensors: [
+      "binarySensors": [
         {
-          label: "power",
-          value: true,
-          states: {
-            false: "Off",
-            true: "On",
-          },
-        },
+          "label": "power",
+          "value": true,
+          "states": {
+            "false": "Off",
+            "true": "On"
+          }
+        }
       ],
-      specialSensors: [
+      "specialSensors": [
         {
-          type: "text",
-          value: "BLABLAddadasdasXYZ",
+          "type": "text",
+          "value": "BLABLAddadasdasXYZ"
         },
         {
-          type: "raw",
-          value: "313233",
-        },
+          "type": "raw",
+          "value": "313233"
+        }
       ],
-      events: [
+      "events": [
         {
-          type: "button",
-          event: "press",
+          "type": "button",
+          "event": "press"
         },
         {
-          type: "dimmer",
-          event: {
-            event: "rotate right",
-            steps: 6,
-          },
-        },
-      ],
+          "type": "dimmer",
+          "event": {
+            "event": "rotate right",
+            "steps": 6
+          }
+        }
+      ]
     },
   },
+
 ];
+

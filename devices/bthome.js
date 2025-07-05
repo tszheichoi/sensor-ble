@@ -16,11 +16,10 @@ function decodeBTHome(_manufacturerData, serviceData) {
   ) {
     return null;
   }
+  const result = {};
   const mac_included = (data[0] & 0x02) != 0;
-  let mac_address = null;
-  let packetId = null;
   if (mac_included) {
-    mac_address = data
+    result.macAddress = data
       .slice(1, 7)
       .reverse()
       .toString("hex")
@@ -30,14 +29,10 @@ function decodeBTHome(_manufacturerData, serviceData) {
   } else {
     data = data.slice(1);
   }
-  const multilevelSensors = [];
-  const binarySensors = [];
-  const specialSensors = [];
-  const events = [];
   while (data.length > 0) {
     const objectId = data[0];
     if (objectId === 0x00) {
-      packetId = data[1];
+      result.packetId = data[1];
       data = data.slice(2);
     } else if (multilevelSensorDefinitions.has(objectId)) {
       const def = multilevelSensorDefinitions.get(objectId);
@@ -47,33 +42,21 @@ function decodeBTHome(_manufacturerData, serviceData) {
       if (def.factor) {
         value *= def.factor;
       }
-      const sensorData = {
-        label: def.label,
-        value,
-      };
+      let key = def.label;
       if (def.unit) {
-        sensorData.unit = def.unit;
+        key += `_${def.unit}`;
       }
-      multilevelSensors.push(sensorData);
+      result[key] = value;
       data = data.slice(1 + def.size);
     } else if (binarySensorDefinitions.has(objectId)) {
       const def = binarySensorDefinitions.get(objectId);
-      const sensorData = {
-        label: def.label,
-        value: data[1] === 0x01,
-        // states: JSON.stringify(def.states), // gross haque
-        states: def.states,
-      };
-      binarySensors.push(sensorData);
+      result[def.label] = data[1] === 0x01;
       data = data.slice(2);
     } else if (objectId === 0x3a) {
       // button event
       const eventId = data[1];
-      const event = {
-        type: "button",
-      };
       if (eventId !== 0x00) {
-        event.event = [
+        const event = [
           "press",
           "double_press",
           "triple_press",
@@ -81,63 +64,40 @@ function decodeBTHome(_manufacturerData, serviceData) {
           "long_double_press",
           "long_triple_press",
         ][eventId - 1];
+        result.button = event;
       }
-      events.push(event);
       data = data.slice(2);
     } else if (objectId === 0x3c) {
-      // button event
       const eventId = data[1];
-      const event = {
-        type: "dimmer",
-      };
       if (eventId !== 0x00) {
-        event.event = {
-          // @ts-expect-error
-          event: ["rotate left", "rotate right"][eventId - 1],
-          steps: data[2],
-        };
+        const event = ["RotateLeft", "RotateRight"][eventId - 1];
+        const steps = data[2];
+        result[`dimmer${event}`] = steps;
       }
-      events.push(event);
       data = data.slice(3);
     } else if (objectId === 0x50) {
       // unix timestamp UTC
       const timestamp = data.readUInt32LE(1);
-      specialSensors.push({
-        type: "timestamp",
-        value: new Date(timestamp * 1000),
-      });
+      result.timestamp = new Date(timestamp * 1000);
       data = data.slice(5);
     } else if (objectId === 0x53) {
       // text sensor (utf8)
       const length = data[1];
       const value = data.slice(2, 2 + length).toString("utf8");
-      specialSensors.push({
-        type: "text",
-        value,
-      });
+      result.text = value;
       data = data.slice(2 + length);
     } else if (objectId === 0x54) {
       // raw sensor
       const length = data[1];
       const value = data.slice(2, 2 + length);
-      specialSensors.push({
-        type: "raw",
-        value: value.toString("hex"),
-      });
+      result.raw = value.toString("hex");
       data = data.slice(2 + length);
     } else {
       console.log(`Unsupported BTHome object ID ${objectId.toString(16)}`);
       return {};
     }
   }
-  return {
-    ...(packetId != null ? { packetId } : {}),
-    ...(mac_address != null ? { mac_address } : {}),
-    multilevelSensors,
-    binarySensors,
-    specialSensors,
-    events,
-  };
+  return result;
 }
 
 const multilevelSensorsArray = [
@@ -351,7 +311,7 @@ const multilevelSensorsArray = [
     signed: true,
     size: 2,
     factor: 0.1,
-    unit: "°C",
+    unit: "C",
   },
   {
     id: 0x02,
@@ -359,7 +319,7 @@ const multilevelSensorsArray = [
     signed: true,
     size: 2,
     factor: 0.01,
-    unit: "°C",
+    unit: "C",
   },
   {
     id: 0x13,
@@ -531,16 +491,10 @@ export const tests = [
       serviceData: { fcd2: "403a013c020653034142435403313233" },
     },
     expected: {
-      multilevelSensors: [],
-      binarySensors: [],
-      specialSensors: [
-        { type: "text", value: "ABC" },
-        { type: "raw", value: "313233" },
-      ],
-      events: [
-        { type: "button", event: "press" },
-        { type: "dimmer", event: { event: "rotate right", steps: 6 } },
-      ],
+      button: "press",
+      dimmerRotateRight: 6,
+      text: "ABC",
+      raw: "313233",
     },
   },
   {
@@ -549,45 +503,12 @@ export const tests = [
     },
     expected: {
       packetId: 9,
-      multilevelSensors: [
-        {
-          label: "temperature",
-          value: 35,
-          unit: "°C",
-        },
-        {
-          label: "humidity",
-          value: 40,
-          unit: "%",
-        },
-        {
-          label: "pressure",
-          value: 1023.86,
-          unit: "hPa",
-        },
-        {
-          label: "illuminance",
-          value: 50.81,
-          unit: "lux",
-        },
-        {
-          label: "co2",
-          value: 1208,
-          unit: "ppm",
-        },
-      ],
-      binarySensors: [
-        {
-          label: "power",
-          value: true,
-          states: {
-            false: "Off",
-            true: "On",
-          },
-        },
-      ],
-      specialSensors: [],
-      events: [],
+      temperature_C: 35,
+      "humidity_%": 40,
+      pressure_hPa: 1023.86,
+      illuminance_lux: 50.81,
+      power: true,
+      co2_ppm: 1208,
     },
   },
   {
@@ -597,10 +518,7 @@ export const tests = [
     },
     expected: {
       packetId: 202,
-      multilevelSensors: [{ label: "battery", value: 100, unit: "%" }],
-      binarySensors: [],
-      specialSensors: [],
-      events: [{ type: "button" }],
+      "battery_%": 100,
     },
   },
   {
@@ -612,16 +530,10 @@ export const tests = [
     },
     expected: {
       packetId: 74,
-      multilevelSensors: [
-        { label: "humidity", value: 40, unit: "%" },
-        { label: "pressure", value: 1023.86, unit: "hPa" },
-      ],
-      binarySensors: [],
-      specialSensors: [
-        { type: "text", value: "BLABLAddadasdasXYZ" },
-        { type: "raw", value: "313233" },
-      ],
-      events: [],
+      "humidity_%": 40,
+      pressure_hPa: 1023.86,
+      text: "BLABLAddadasdasXYZ",
+      raw: "313233",
     },
   },
   {
@@ -632,18 +544,12 @@ export const tests = [
       },
     },
     expected: {
+      macAddress: "a5:32:39:43:ca:48",
       packetId: 47,
-      mac_address: "a5:32:39:43:ca:48",
-      multilevelSensors: [
-        { label: "humidity", value: 40, unit: "%" },
-        { label: "pressure", value: 1023.86, unit: "hPa" },
-      ],
-      binarySensors: [],
-      specialSensors: [
-        { type: "text", value: "BLABLAddadasdasXYZ" },
-        { type: "raw", value: "313233" },
-      ],
-      events: [],
+      "humidity_%": 40,
+      pressure_hPa: 1023.86,
+      text: "BLABLAddadasdasXYZ",
+      raw: "313233",
     },
   },
   {
@@ -654,73 +560,19 @@ export const tests = [
       },
     },
     expected: {
+      macAddress: "a5:32:39:43:ca:48",
       packetId: 44,
-      mac_address: "a5:32:39:43:ca:48",
-      multilevelSensors: [
-        {
-          label: "temperature",
-          value: 35,
-          unit: "°C",
-        },
-        {
-          label: "humidity",
-          value: 40,
-          unit: "%",
-        },
-        {
-          label: "pressure",
-          value: 1023.86,
-          unit: "hPa",
-        },
-        {
-          label: "illuminance",
-          value: 50.81,
-          unit: "lux",
-        },
-        {
-          label: "co2",
-          value: 1208,
-          unit: "ppm",
-        },
-        {
-          label: "tvoc",
-          value: 350,
-          unit: "ug/m3",
-        },
-      ],
-      binarySensors: [
-        {
-          label: "power",
-          value: true,
-          states: {
-            false: "Off",
-            true: "On",
-          },
-        },
-      ],
-      specialSensors: [
-        {
-          type: "text",
-          value: "BLABLAddadasdasXYZ",
-        },
-        {
-          type: "raw",
-          value: "313233",
-        },
-      ],
-      events: [
-        {
-          type: "button",
-          event: "press",
-        },
-        {
-          type: "dimmer",
-          event: {
-            event: "rotate right",
-            steps: 6,
-          },
-        },
-      ],
+      temperature_C: 35,
+      "humidity_%": 40,
+      pressure_hPa: 1023.86,
+      illuminance_lux: 50.81,
+      power: true,
+      co2_ppm: 1208,
+      "tvoc_ug/m3": 350,
+      button: "press",
+      dimmerRotateRight: 6,
+      text: "BLABLAddadasdasXYZ",
+      raw: "313233",
     },
   },
 ];

@@ -2,6 +2,9 @@ import noble from "@abandonware/noble";
 import readline from "readline";
 import { getDecoders } from "./registry.js";
 
+// Global map to store advertisements by peripheral ID
+const advertisementMap = new Map();
+
 function ask(question) {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -14,6 +17,68 @@ function ask(question) {
       resolve(answer);
     })
   );
+}
+
+function areBuffersEqual(buf1, buf2) {
+  if (!buf1 && !buf2) return true;
+  if (!buf1 || !buf2) return false;
+  if (buf1.length !== buf2.length) return false;
+  return buf1.equals(buf2);
+}
+
+function areServiceDataEqual(serviceData1, serviceData2) {
+  if (!serviceData1 && !serviceData2) return true;
+  if (!serviceData1 || !serviceData2) return false;
+  if (serviceData1.length !== serviceData2.length) return false;
+
+  // Create maps for easier comparison
+  const map1 = new Map(serviceData1.map((sd) => [sd.uuid, sd.data]));
+  const map2 = new Map(serviceData2.map((sd) => [sd.uuid, sd.data]));
+
+  if (map1.size !== map2.size) return false;
+
+  for (const [uuid, data] of map1) {
+    const otherData = map2.get(uuid);
+    if (!otherData || !areBuffersEqual(data, otherData)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function isAdvertisementDuplicate(peripheralId, advertisement) {
+  const stored = advertisementMap.get(peripheralId);
+  if (!stored) {
+    // Store the advertisement for future comparison
+    advertisementMap.set(peripheralId, {
+      manufacturerData: advertisement.manufacturerData,
+      serviceData: advertisement.serviceData,
+    });
+    return false;
+  }
+
+  // Compare manufacturerData and serviceData
+  const manufacturerMatch = areBuffersEqual(
+    stored.manufacturerData,
+    advertisement.manufacturerData
+  );
+  const serviceDataMatch = areServiceDataEqual(
+    stored.serviceData,
+    advertisement.serviceData
+  );
+
+  if (manufacturerMatch && serviceDataMatch) {
+    return true; // Duplicate found
+  }
+
+  // Update stored advertisement if different
+  advertisementMap.set(peripheralId, {
+    manufacturerData: advertisement.manufacturerData,
+    serviceData: advertisement.serviceData,
+  });
+
+  return false;
 }
 
 async function main() {
@@ -52,7 +117,7 @@ async function main() {
       } else {
         console.log("Scanning all devices");
       }
-      await noble.startScanningAsync([], false);
+      await noble.startScanningAsync([], true);
     } else {
       await noble.stopScanningAsync();
       console.log("Scanning stopped");
@@ -60,8 +125,17 @@ async function main() {
   });
 
   noble.on("discover", async (peripheral) => {
+    // console.log(peripheral.uuid, peripheral.id);
+
     try {
       const { advertisement } = peripheral;
+
+      // Check for duplicate advertisement
+      // if (isAdvertisementDuplicate(peripheral.id, advertisement)) {
+      //   console.log(peripheral.uuid, peripheral.id);
+      //   return; // Skip duplicate advertisements
+      // }
+
       if (decoder == null) {
         logFoundDevice(peripheral.id, advertisement);
       } else if (isDecoderValid(decoder, advertisement)) {
@@ -78,7 +152,8 @@ async function main() {
             serviceData
           );
           if (decoded) {
-            console.log("Decoded advertisement data:", decoded);
+            const tag = isAdvertisementDuplicate(peripheral.id, advertisement) ? "duplicate" : "new advertisement";
+            console.log(`Decoded ${tag} advertisement:`, decoded);
           }
         }
         if (decoder.start) {
@@ -109,8 +184,7 @@ async function startStreaming(peripheral, decoder) {
       endpoint.on("data", (data, isNotification) => {
         if (isNotification) {
           console.log(
-            `Service (${notifyEntry.service}) Characteristic (${
-              notifyEntry.characteristic
+            `Service (${notifyEntry.service}) Characteristic (${notifyEntry.characteristic
             }) Data: ${data.toString("hex")}`
           );
           const decoded = notifyEntry.onNotification(peripheral.id, data);

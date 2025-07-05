@@ -7,7 +7,8 @@
  * https://github.com/AlCalzone/ioBroker.ble.git
  * MIT license
  */
-function decodeBTHome(data) {
+function decodeBTHome(_manufacturerData, serviceData) {
+  let data = serviceData["fcd2"];
   if (
     data.length < 7 || // too short
     data[0] & 0x01 || // encrypted data not supported
@@ -516,7 +517,7 @@ export const decoder = {
   decoderName: "bthome",
   name: null,
   serviceUUID: "fcd2",
-  servicedataDecode: decodeBTHome,
+  advertisementDecode: decodeBTHome,
   units:
     "Values will be in the appropriate units based on documentation: https://bthome.io/format/",
 };
@@ -527,7 +528,7 @@ export const tests = [
     // servicedata decode test. Given the servicedata data, it should decode to the expected values.
     given: {
       // DIY sensor https://github.com/mhaberler/BTHomeV2-ESP32-example.git#9f34e42b9c3b039718b67da57ea02e7fa0d11417
-      serviceData: "403a013c020653034142435403313233",
+      serviceData: { fcd2: "403a013c020653034142435403313233" },
     },
     expected: {
       multilevelSensors: [],
@@ -544,7 +545,7 @@ export const tests = [
   },
   {
     given: {
-      serviceData: "40000902ac0d03a00f04f28f0105d91300100112b804",
+      serviceData: { fcd2: "40000902ac0d03a00f04f28f0105d91300100112b804" },
     },
     expected: {
       packetId: 9,
@@ -592,7 +593,7 @@ export const tests = [
   {
     given: {
       // idle Shelly BLU
-      serviceData: "4400ca01643a00",
+      serviceData: { fcd2: "4400ca01643a00" },
     },
     expected: {
       packetId: 202,
@@ -605,8 +606,9 @@ export const tests = [
   {
     given: {
       //  DIY sensor extended advertising with pid
-      serviceData:
-        "40004a03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
+      serviceData: {
+        fcd2: "40004a03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
+      },
     },
     expected: {
       packetId: 74,
@@ -625,8 +627,9 @@ export const tests = [
   {
     given: {
       //  DIY sensor extended advertising with pid and mac
-      serviceData:
-        "4248ca433932a5002f03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
+      serviceData: {
+        fcd2: "4248ca433932a5002f03a00f04f28f015312424c41424c4164646164617364617358595a5403313233",
+      },
     },
     expected: {
       packetId: 47,
@@ -646,8 +649,9 @@ export const tests = [
   {
     given: {
       //  DIY sensor extended advertising with pid and mac, lots of fields
-      serviceData:
-        "4248ca433932a5002c02ac0d03a00f04f28f0105d91300100112b804135e013a013c02065312424c41424c4164646164617364617358595a5403313233",
+      serviceData: {
+        fcd2: "4248ca433932a5002c02ac0d03a00f04f28f0105d91300100112b804135e013a013c02065312424c41424c4164646164617364617358595a5403313233",
+      },
     },
     expected: {
       packetId: 44,

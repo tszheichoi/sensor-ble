@@ -114,7 +114,7 @@ const multilevelSensorsArray = [
     label: "battery",
     signed: false,
     size: 1,
-    unit: "%",
+    unit: "percent",
   },
   {
     id: 0x12,
@@ -211,14 +211,14 @@ const multilevelSensorsArray = [
     signed: false,
     size: 2,
     factor: 0.01,
-    unit: "%",
+    unit: "percent",
   },
   {
     id: 0x2e,
     label: "humidity",
     signed: false,
     size: 1,
-    unit: "%",
+    unit: "percent",
   },
   {
     id: 0x05,
@@ -250,14 +250,14 @@ const multilevelSensorsArray = [
     signed: false,
     size: 2,
     factor: 0.01,
-    unit: "%",
+    unit: "percent",
   },
   {
     id: 0x2f,
     label: "moisture",
     signed: false,
     size: 1,
-    unit: "%",
+    unit: "percent",
   },
   {
     id: 0x0d,
@@ -504,7 +504,7 @@ export const tests = [
     expected: {
       packetId: 9,
       temperature_C: 35,
-      "humidity_%": 40,
+      humidity_percent: 40,
       pressure_hPa: 1023.86,
       illuminance_lux: 50.81,
       power: true,
@@ -518,7 +518,7 @@ export const tests = [
     },
     expected: {
       packetId: 202,
-      "battery_%": 100,
+      battery_percent: 100,
     },
   },
   {
@@ -530,7 +530,7 @@ export const tests = [
     },
     expected: {
       packetId: 74,
-      "humidity_%": 40,
+      humidity_percent: 40,
       pressure_hPa: 1023.86,
       text: "BLABLAddadasdasXYZ",
       raw: "313233",
@@ -546,7 +546,7 @@ export const tests = [
     expected: {
       macAddress: "a5:32:39:43:ca:48",
       packetId: 47,
-      "humidity_%": 40,
+      humidity_percent: 40,
       pressure_hPa: 1023.86,
       text: "BLABLAddadasdasXYZ",
       raw: "313233",
@@ -563,7 +563,7 @@ export const tests = [
       macAddress: "a5:32:39:43:ca:48",
       packetId: 44,
       temperature_C: 35,
-      "humidity_%": 40,
+      humidity_percent: 40,
       pressure_hPa: 1023.86,
       illuminance_lux: 50.81,
       power: true,

@@ -54,7 +54,7 @@ function decodeRuuviTags(manufacturerData) {
 
   return {
     temperature_C: temperature,
-    "humidity_%": humidity,
+    humidity_percent: humidity,
     pressure_Pa: pressure,
     acceleration_x_mg: accelerationX,
     acceleration_y_mg: accelerationY,
@@ -86,7 +86,7 @@ export const tests = [
     },
     expected: {
       temperature_C: 24.3,
-      "humidity_%": 53.49,
+      humidity_percent: 53.49,
       pressure_Pa: 100044,
       acceleration_x_mg: 4,
       acceleration_y_mg: -4,
@@ -104,7 +104,7 @@ export const tests = [
     },
     expected: {
       temperature_C: 25.03,
-      "humidity_%": null,
+      humidity_percent: null,
       pressure_Pa: null,
       acceleration_x_mg: 0,
       acceleration_y_mg: -36,

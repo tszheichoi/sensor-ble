@@ -66,27 +66,19 @@ async function main() {
         logFoundDevice(peripheral.id, advertisement);
       } else if (isDecoderValid(decoder, advertisement)) {
         if (decoder.advertisementDecode) {
+          const serviceData = (advertisement.serviceData ?? []).reduce(
+            (acc, sd) => {
+              acc[sd.uuid] = sd.data;
+              return acc;
+            },
+            {}
+          );
           const decoded = decoder.advertisementDecode(
-            advertisement.manufacturerData
+            advertisement.manufacturerData,
+            serviceData
           );
           if (decoded) {
-            console.log(
-              "Got data from device:",
-              advertisement.manufacturerData.toString("hex")
-            );
-            console.log("Decoded data:", decoded);
-          }
-        }
-        if (decoder.servicedataDecode) {
-          const decoded = decoder.servicedataDecode(
-            advertisement.serviceData[0].data
-          );
-          if (decoded) {
-            console.log(
-              "Got data from device:",
-              advertisement.serviceData[0].data.toString("hex")
-            );
-            console.log("Decoded data:", decoded);
+            console.log("Decoded advertisement data:", decoded);
           }
         }
         if (decoder.start) {

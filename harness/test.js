@@ -14,18 +14,10 @@ async function run() {
     }
     for (const test of tests) {
       const given = test.given;
-      if (
-        given.manufacturerData != null &&
-        decoder.advertisementDecode != null
-      ) {
+      if (decoder.advertisementDecode != null) {
         const decoded = decoder.advertisementDecode(
-          Buffer.from(given.manufacturerData, "hex")
-        );
-        logTest(test, decoder, decoded);
-      }
-      if (given.serviceData != null && decoder.servicedataDecode != null) {
-        const decoded = decoder.servicedataDecode(
-          Buffer.from(given.serviceData, "hex")
+          processManufacturerData(given.manufacturerData),
+          processServiceData(given.serviceData)
         );
         logTest(test, decoder, decoded);
       }
@@ -55,6 +47,24 @@ async function run() {
       }
     }
   }
+}
+
+function processManufacturerData(manufacturerData) {
+  if (manufacturerData == null) {
+    return manufacturerData;
+  }
+  return Buffer.from(manufacturerData, "hex");
+}
+
+function processServiceData(serviceData) {
+  if (serviceData == null) {
+    return serviceData;
+  }
+  const processed = {};
+  for (const [uuid, data] of Object.entries(serviceData)) {
+    processed[uuid] = Buffer.from(data, "hex");
+  }
+  return processed;
 }
 
 function logTest(test, decoder, decoded) {

@@ -594,12 +594,13 @@ export const tests = [
       raw: "313233",
     },
   },
-  {
+  { // testcase from manual https://bthome.io/format/
     given: {
-      serviceData: { fcd2: "44f00100f128000000f21a0000" },
+      serviceData: { fcd2: "44f00100f100010204f2000106" },
     },
     expected: {
-      devicetype: 1, fwversion4: '40.0.0.0', fwversion3: '26.0.0'
+      devicetype: 1, fwversion4: '4.2.1.0', fwversion3: '6.1.0'
     },
   }
 ];
+

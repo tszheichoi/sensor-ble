@@ -98,17 +98,17 @@ function decodeBTHome(_manufacturerData, serviceData) {
       data = data.slice(3);
 
     } else if (objectId === 0xF1) { // firmware version, 	uint32 (4 bytes)
-      const major = data[1];
-      const minor = data[2];
-      const patch = data[3];
-      const rel = data[4];
+      const rel = data[1];
+      const patch = data[2];
+      const minor = data[3];
+      const major = data[4];
       result[`fwversion4`] = `${major}.${minor}.${patch}.${rel}`;
       data = data.slice(5);
 
     } else if (objectId === 0xF2) { // firmware version, uint24 (3 bytes)
-      const major = data[1];
+      const patch = data[1];
       const minor = data[2];
-      const patch = data[3];
+      const major = data[3];
       result[`fwversion3`] = `${major}.${minor}.${patch}`;
       data = data.slice(4);
     } else {
@@ -594,4 +594,12 @@ export const tests = [
       raw: "313233",
     },
   },
+  {
+    given: {
+      serviceData: { fcd2: "44f00100f128000000f21a0000" },
+    },
+    expected: {
+      devicetype: 1, fwversion4: '40.0.0.0', fwversion3: '26.0.0'
+    },
+  }
 ];

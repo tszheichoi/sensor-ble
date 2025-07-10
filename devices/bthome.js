@@ -92,6 +92,23 @@ function decodeBTHome(_manufacturerData, serviceData) {
       const value = data.slice(2, 2 + length);
       result.raw = value.toString("hex");
       data = data.slice(2 + length);
+    } else if (objectId === 0xF0) { // device type id, 	uint16 (2 bytes)
+      const devType = serviceData.getUint16(offset + 1);
+      decodedValue[`devicetype`] = devType;
+      offset += 2;
+    } else if (objectId === 0xF1) { // firmware version, 	uint32 (4 bytes)
+      const major = serviceData.getUint8(offset + 1);
+      const minor = serviceData.getUint8(offset + 2);
+      const patch = serviceData.getUint8(offset + 4);
+      const rel = serviceData.getUint8(offset + 3);
+      decodedValue[`fwversion4`] = `${major}.${minor}.${patch}.${rel}`;
+      offset += 4;
+    } else if (objectId === 0xF2) { // firmware version, uint24 (3 bytes)
+      const major = serviceData.getUint8(offset + 1);
+      const minor = serviceData.getUint8(offset + 2);
+      const patch = serviceData.getUint8(offset + 3);
+      decodedValue[`fwversion3`] = `${major}.${minor}.${patch}`;
+      offset += 3;
     } else {
       console.log(`Unsupported BTHome object ID ${objectId.toString(16)}`);
       return {};

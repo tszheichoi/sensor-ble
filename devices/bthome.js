@@ -10,7 +10,7 @@
 function decodeBTHome(_manufacturerData, serviceData) {
   let data = serviceData["fcd2"];
   if (
-    data.length < 7 || // too short
+    data.length < 4 || // too short
     data[0] & 0x01 || // encrypted data not supported
     (data[0] & 0x60) >> 5 != 2 // not BTHome v2
   ) {
@@ -92,6 +92,25 @@ function decodeBTHome(_manufacturerData, serviceData) {
       const value = data.slice(2, 2 + length);
       result.raw = value.toString("hex");
       data = data.slice(2 + length);
+
+    } else if (objectId === 0xF0) { // device type id, 	uint16 (2 bytes)
+      result[`devicetype`] = data.readUInt16LE(1); // little endian);
+      data = data.slice(3);
+
+    } else if (objectId === 0xF1) { // firmware version, 	uint32 (4 bytes)
+      const rel = data[1];
+      const patch = data[2];
+      const minor = data[3];
+      const major = data[4];
+      result[`fwversion4`] = `${major}.${minor}.${patch}.${rel}`;
+      data = data.slice(5);
+
+    } else if (objectId === 0xF2) { // firmware version, uint24 (3 bytes)
+      const patch = data[1];
+      const minor = data[2];
+      const major = data[3];
+      result[`fwversion3`] = `${major}.${minor}.${patch}`;
+      data = data.slice(4);
     } else {
       console.log(`Unsupported BTHome object ID ${objectId.toString(16)}`);
       return {};
@@ -575,4 +594,13 @@ export const tests = [
       raw: "313233",
     },
   },
+  { // testcase from manual https://bthome.io/format/
+    given: {
+      serviceData: { fcd2: "44f00100f100010204f2000106" },
+    },
+    expected: {
+      devicetype: 1, fwversion4: '4.2.1.0', fwversion3: '6.1.0'
+    },
+  }
 ];
+

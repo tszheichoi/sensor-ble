@@ -174,7 +174,7 @@ function find(services, serviceUuid, characteristicUuid) {
 
 function isDecoderValid(decoder, advertisement) {
   if (decoder.name && advertisement.localName) {
-    return decoder.name === advertisement.localName;
+    return advertisement.localName.includes(decoder.name);
   }
   const manufacturerData = advertisement.manufacturerData;
   if (decoder.manufacturer && manufacturerData) {

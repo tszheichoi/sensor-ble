@@ -12,7 +12,7 @@ function decodeBTHome(_manufacturerData, serviceData) {
   if (
     data.length < 4 || // too short
     data[0] & 0x01 || // encrypted data not supported
-    (data[0] & 0x60) >> 5 != 2 // not BTHome v2
+    (data[0] & 0xe0) >> 5 != 2 // not BTHome v2
   ) {
     return null;
   }
@@ -56,15 +56,16 @@ function decodeBTHome(_manufacturerData, serviceData) {
       // button event
       const eventId = data[1];
       if (eventId !== 0x00) {
-        const event = [
-          "press",
-          "double_press",
-          "triple_press",
-          "long_press",
-          "long_double_press",
-          "long_triple_press",
-        ][eventId - 1];
-        result.button = event;
+        const buttonEvents = {
+          0x01: "press",
+          0x02: "double_press",
+          0x03: "triple_press",
+          0x04: "long_press",
+          0x05: "long_double_press",
+          0x06: "long_triple_press",
+          0x80: "hold_press",
+        };
+        result.button = buttonEvents[eventId];
       }
       data = data.slice(2);
     } else if (objectId === 0x3c) {
@@ -425,6 +426,79 @@ const multilevelSensorsArray = [
     factor: 0.001,
     unit: "L",
   },
+  {
+    id: 0x55,
+    label: "volume storage",
+    signed: false,
+    size: 4,
+    factor: 0.001,
+    unit: "L",
+  },
+  {
+    id: 0x56,
+    label: "conductivity",
+    signed: false,
+    size: 2,
+    unit: "µS/cm",
+  },
+  {
+    id: 0x57,
+    label: "temperature",
+    signed: true,
+    size: 1,
+    unit: "C",
+  },
+  {
+    id: 0x58,
+    label: "temperature",
+    signed: true,
+    size: 1,
+    factor: 0.35,
+    unit: "C",
+  },
+  { id: 0x59, label: "count", signed: true, size: 1 },
+  { id: 0x5a, label: "count", signed: true, size: 2 },
+  { id: 0x5b, label: "count", signed: true, size: 4 },
+  {
+    id: 0x5c,
+    label: "power",
+    signed: true,
+    size: 4,
+    factor: 0.01,
+    unit: "W",
+  },
+  {
+    id: 0x5d,
+    label: "current",
+    signed: true,
+    size: 2,
+    factor: 0.001,
+    unit: "A",
+  },
+  {
+    id: 0x5e,
+    label: "direction",
+    signed: false,
+    size: 2,
+    factor: 0.01,
+    unit: "°",
+  },
+  {
+    id: 0x5f,
+    label: "precipitation",
+    signed: false,
+    size: 2,
+    factor: 0.1,
+    unit: "mm",
+  },
+  { id: 0x60, label: "channel", signed: false, size: 1 },
+  {
+    id: 0x61,
+    label: "rotational speed",
+    signed: false,
+    size: 2,
+    unit: "rpm",
+  },
 ];
 const multilevelSensorDefinitions = new Map(
   multilevelSensorsArray.map((def) => [def.id, def])
@@ -626,7 +700,18 @@ export const tests = [
       'speed_m/s': -2.123456, 'acceleration_m/s²': -3.123456
     }
   },
-
+  { // shelly window sensor
+    given: {
+      serviceData: { fcd2: "4400f00164055802002d003f0000" },
+    },
+    expected: {
+      packetId: 240,
+      battery_percent: 100,
+      illuminance_lux: 6,
+      window: false,
+      'rotation_°': 0
+    }
+  },
 
 ];
 

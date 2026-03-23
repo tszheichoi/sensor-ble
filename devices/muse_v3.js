@@ -40,19 +40,104 @@ const Hardware = {
   0x0010: "Temperature",
   0x0020: "Humidity",
   0x0040: "Pressure",
-  0x0080: "Lux",
-  0x0100: "Lux",
+  0x0080: "Lux_VS",
+  0x0100: "Lux_IR",
   0x0200: "Range",
   0x0400: "Microphone",
+};
+// Map of acquisition modes to BLE command parameters
+const MODE_COMMANDS = {
+  GYR: 0x000001, // Gyroscope
+  AXL: 0x000002, // Accelerometer
+  MAG: 0x000004, // Magnetometer
+  HDR: 0x000008, // High Dynamic Range Accelerometer
+  QUAT: 0x000010, // Orientation Quaternion
+  TIME: 0x000020, // Timestamp
+  TH: 0x000040, // Temperature + Humidity
+  TP: 0x000080, // Temperature + Pressure
+  RNG: 0x000100, // Range + Light Intensity
+  SND: 0x000400, // Microphone
 };
 
 const DATA_DIRECT = 0x08;
 const FREQ_25HZ = 0x01;
+const FREQ_50HZ = 0x02;
 const FREQ_100HZ = 0x04;
 
 const scaleById = {};
 const hardwarePromiseById = {};
 const hardwareById = {};
+const acqModeById = {};
+
+/**
+ * Build sensor combination based on available hardware
+ * @param {string[]} hardware - List of available hardware from device
+ * @returns {number} Acquisition mode code
+ */
+function buildAcqMode(hardware) {
+  // Note as per docs: the total size of the package must be equal to 6, 12, 24, 30, or 60 bytes
+  const hasGyro = hardware.includes("Gyroscope");
+  const hasAccel = hardware.includes("Acceleration");
+  const hasMag = hardware.includes("Magnetometer");
+  const hasTemp = hardware.includes("Temperature");
+  const hasHum = hardware.includes("Humidity");
+  const hasPress = hardware.includes("Pressure");
+  const hasRange = hardware.includes("Range");
+  const hasLux = hardware.includes("Lux_VS") || hardware.includes("Lux_IR");
+  const hasHDR = hardware.includes("HDR_Acceleration");
+
+  if (
+    hasGyro &&
+    hasAccel &&
+    hasMag &&
+    hasTemp &&
+    hasHum &&
+    hasPress &&
+    hasRange &&
+    hasLux &&
+    hasHDR
+  ) {
+    // 0xff 0x01 0x00
+    return (
+      MODE_COMMANDS["GYR"] |
+      MODE_COMMANDS["AXL"] |
+      MODE_COMMANDS["MAG"] |
+      MODE_COMMANDS["HDR"] |
+      MODE_COMMANDS["QUAT"] |
+      MODE_COMMANDS["TIME"] |
+      MODE_COMMANDS["TH"] |
+      MODE_COMMANDS["TP"] |
+      MODE_COMMANDS["RNG"]
+    );
+  }
+
+  if (hasGyro && hasAccel && hasMag) {
+    // 0x37 0x00 0x00
+    return (
+      MODE_COMMANDS["GYR"] |
+      MODE_COMMANDS["AXL"] |
+      MODE_COMMANDS["MAG"] |
+      MODE_COMMANDS["QUAT"] |
+      MODE_COMMANDS["TIME"]
+    );
+  }
+
+  // If none of the above work, log error and return 0
+  console.error("Unable to configure Muse V3: insufficient hardware available");
+  console.error("Available hardware:", hardware);
+  return 0;
+}
+
+function decodeHardware(byte) {
+  let supportedHardware = [];
+  for (const [mask, name] of Object.entries(Hardware)) {
+    if ((byte & Number(mask)) !== 0) {
+      // device supports this hardware
+      supportedHardware.push(name);
+    }
+  }
+  return supportedHardware;
+}
 
 function decodeFullScale(byte) {
   const gyroscopeCode = byte & gyroscopeMask;
@@ -77,8 +162,11 @@ function decodeXYZ(currentPayload, offset, res) {
 
 function decodeTimestamp(currentPayload, offset) {
   // Note that timestamp is 6 bytes long, and is offset (though we only use relative time to avoid device time drift so ignore the offset)
-  let tempTime =
-    currentPayload.readBigUInt64LE(offset) & BigInt(0x0000ffffffffffff);
+  // (Read 6 bytes manually to avoid reading beyond the timestamp data)
+  let tempTime = BigInt(0);
+  for (let i = 0; i < 6; i++) {
+    tempTime |= BigInt(currentPayload[offset + i]) << BigInt(i * 8);
+  }
   return Number(tempTime);
 }
 
@@ -151,38 +239,67 @@ function onDataCharacteristic(deviceId, data) {
     return;
   }
   const scale = scaleById[deviceId];
+  const acq = acqModeById[deviceId];
   let offset = 8;
-  const gyro = decodeXYZ(data, offset, scale.gyroscope.sensitivityCoefficient);
-  offset += 6;
-  const accel = decodeXYZ(
-    data,
-    offset,
-    scale.accelerometer.sensitivityCoefficient
-  );
-  offset += 6;
-  const mag = decodeXYZ(
-    data,
-    offset,
-    scale.magnetometer.sensitivityCoefficient
-  );
-  offset += 6;
-  const hdrAccel = decodeXYZ(
-    data,
-    offset,
-    scale.hdrAccelerometer.sensitivityCoefficient
-  );
-  offset += 6;
-  const orientation = decodeOrientation(data, offset);
-  offset += 6;
-  const timestamp = decodeTimestamp(data, offset);
-  offset += 6;
-  const tempHum = decodeTempHum(data, offset);
-  offset += 6;
-  const tempPress = decodeTempPress(data, offset);
-  offset += 6;
-  const rangeLux = decodeRange(data, offset);
-  offset += 6;
-  // const sound = ""; // TODO: don't know how to decode sound data
+
+  let gyro = [null, null, null];
+  if ((acq & MODE_COMMANDS["GYR"]) !== 0) {
+    gyro = decodeXYZ(data, offset, scale.gyroscope.sensitivityCoefficient);
+    offset += 6;
+  }
+
+  let accel = [null, null, null];
+  if ((acq & MODE_COMMANDS["AXL"]) !== 0) {
+    accel = decodeXYZ(data, offset, scale.accelerometer.sensitivityCoefficient);
+    offset += 6;
+  }
+
+  let mag = [null, null, null];
+  if ((acq & MODE_COMMANDS["MAG"]) !== 0) {
+    mag = decodeXYZ(data, offset, scale.magnetometer.sensitivityCoefficient);
+    offset += 6;
+  }
+
+  let hdrAccel = [null, null, null];
+  if ((acq & MODE_COMMANDS["HDR"]) !== 0) {
+    hdrAccel = decodeXYZ(
+      data,
+      offset,
+      scale.hdrAccelerometer.sensitivityCoefficient
+    );
+    offset += 6;
+  }
+
+  let orientation = [null, null, null, null];
+  if ((acq & MODE_COMMANDS["QUAT"]) !== 0) {
+    orientation = decodeOrientation(data, offset);
+    offset += 6;
+  }
+
+  let timestamp = null;
+  if ((acq & MODE_COMMANDS["TIME"]) !== 0) {
+    timestamp = decodeTimestamp(data, offset);
+    offset += 6;
+  }
+
+  let tempHum = [null, null];
+  if ((acq & MODE_COMMANDS["TH"]) !== 0) {
+    tempHum = decodeTempHum(data, offset);
+    offset += 6;
+  }
+
+  let tempPress = [null, null];
+  if ((acq & MODE_COMMANDS["TP"]) !== 0) {
+    tempPress = decodeTempPress(data, offset);
+    offset += 6;
+  }
+
+  let rangeLux = [null, null, null, null];
+  if ((acq & MODE_COMMANDS["RNG"]) !== 0) {
+    rangeLux = decodeRange(data, offset);
+    offset += 6;
+  }
+
   return {
     gyroscope_x_dps: gyro[0],
     gyroscope_y_dps: gyro[1],
@@ -214,18 +331,23 @@ function onDataCharacteristic(deviceId, data) {
 
 /** @type {NotificationHandler} */
 function onCmdCharacteristic(deviceId, data) {
-  if (data[0] === 0x00 && data[1] === 0x05 && data[2] === 0xc0) {
+  // Check ack msg (0x00) and error code (0: OK, 1:ERROR)
+  if (data[0] !== 0x00 || data[3] !== 0x00) {
+    return; // error message
+  }
+  if (data[2] === 0xc0) {
+    // Full scale
     scaleById[deviceId] = decodeFullScale(data[4]);
   }
-  if (data[0] === 0x00 && data[1] === 0x0a && data[2] === 0x8f) {
-    const hardware = data.readUInt32LE(4);
+  if (data[2] === 0x8f) {
+    // Hardware config
+    const hardware = decodeHardware(data.readUInt32LE(4));
     hardwareById[deviceId] = hardware;
-    // for (const [mask, name] of Object.entries(Hardware)) {
-    //   if ((hardware & Number(mask)) !== 0) {
-    //     // device supports this hardware
-    //   }
-    // }
-    hardwarePromiseById[deviceId](); // resolve sensors promise
+    hardwarePromiseById[deviceId](hardware); // resolve sensors promise
+  }
+  if (data[1] === 0x09 && data[2] === 0x02) {
+    // Start acquisition
+    acqModeById[deviceId] = (data[9] << 16) | (data[8] << 8) | data[7];
   }
 }
 
@@ -236,16 +358,26 @@ async function start(deviceId, isPreview, bleApi) {
   );
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [0x8f, 0x00]); // Get Device Sensors
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [0xc0, 0x00]); // Get Device Scales
-  // TODO: start based on hardware available
-  await gotSensors;
+
+  // Build acquisition mode based on available hardware
+  const hardware = await gotSensors;
+  const acqMode = buildAcqMode(hardware);
+  if (acqMode === 0) {
+    return; // (Unable to configure)
+  }
+
+  const acqByte1 = acqMode & 0xff;
+  const acqByte2 = (acqMode >> 8) & 0xff;
+  const acqByte3 = (acqMode >> 16) & 0xff;
+
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [
     0x02,
     0x05,
     DATA_DIRECT,
-    0xff,
-    0x03,
-    0x00,
-    isPreview ? FREQ_25HZ : FREQ_100HZ,
+    acqByte1,
+    acqByte2,
+    acqByte3,
+    isPreview ? FREQ_25HZ : FREQ_50HZ,
   ]);
 }
 
@@ -277,7 +409,7 @@ export const decoder = {
   units:
     "Values will be in the appropriate units based on documentation: https://docs.221e.com/documentation/muse-protocols/muse-v3_-communication/",
   frequency:
-    "Logs at 100Hz for all sensors, except for temperature, humidity, and pressure which are 25Hz. When previewing, all sensors are at 25Hz.",
+    "Logs at 50Hz for all enabled sensors. When previewing, all sensors are at 25Hz.",
 };
 
 /** @type {Test[]} */
@@ -298,6 +430,12 @@ export const tests = [
           service: SERVICE_UUID,
           characteristic: CMD_UUID,
           data: "0005c00047000000000000000000000000000000",
+        },
+        {
+          // This message is an ack for starting acquisition
+          service: SERVICE_UUID,
+          characteristic: CMD_UUID,
+          data: "00090200470000ff010001000000000000000000",
         },
         {
           // This message contains the data

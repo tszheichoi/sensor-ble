@@ -122,6 +122,7 @@ export const tests = [
       in_ear_left: false,
       in_ear_right: false,
       model: "AirPodsPro2 Lightning",
+      fixedFormat: true,
     },
   },
   {

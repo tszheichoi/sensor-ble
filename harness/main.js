@@ -78,11 +78,11 @@ async function main() {
             serviceData
           );
           if (decoded) {
-            if (decoder?.fixedFormat) {
-              console.log("Decoded advertisement data (fixed):", decoded);
+            if (decoder?.variableFormat) {
+              const result = { "_decoded": JSON.stringify(decoded) }
+              console.log("Decoded advertisement data (variable):", result)
             } else {
-              const result = { "_decoded": decoded }
-              console.log("Decoded advertisement data (variable):", decoded)
+              console.log("Decoded advertisement data (fixed):", decoded);
             }
           }
         }

@@ -278,7 +278,6 @@ export const decoder = {
     "Values will be in the appropriate units based on documentation: https://docs.221e.com/documentation/muse-protocols/muse-v3_-communication/",
   frequency:
     "Logs at 100Hz for all sensors, except for temperature, humidity, and pressure which are 25Hz. When previewing, all sensors are at 25Hz.",
-  fixedFormat: true,
 };
 
 /** @type {Test[]} */

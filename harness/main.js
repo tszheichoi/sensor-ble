@@ -147,6 +147,11 @@ async function startStreaming(peripheral, decoder) {
       }
     },
   };
+  if (decoder.onConnect) {
+    console.log("Reading device info...");
+    const info = await decoder.onConnect(peripheral.id, bleApi);
+    console.log("Device info:", info);
+  }
   await decoder.start(peripheral.id, true, bleApi);
   console.log("Waiting 10 seconds...");
   await new Promise((resolve) => setTimeout(resolve, 10000));

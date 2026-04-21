@@ -587,6 +587,7 @@ export const decoder = {
   name: null,
   serviceUUID: "fcd2",
   advertisementDecode: decodeBTHome,
+  variableFormat: true,
   units:
     "Values will be in the appropriate units based on documentation: https://bthome.io/format/",
 };

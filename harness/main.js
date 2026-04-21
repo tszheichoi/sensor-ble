@@ -78,7 +78,12 @@ async function main() {
             serviceData
           );
           if (decoded) {
-            console.log("Decoded advertisement data:", decoded);
+            if (decoder?.variableFormat) {
+              const result = { "_decoded": JSON.stringify(decoded) }
+              console.log("Decoded advertisement data (variable):", result)
+            } else {
+              console.log("Decoded advertisement data (fixed):", decoded);
+            }
           }
         }
         if (decoder.start) {
@@ -109,8 +114,7 @@ async function startStreaming(peripheral, decoder) {
       endpoint.on("data", (data, isNotification) => {
         if (isNotification) {
           console.log(
-            `Service (${notifyEntry.service}) Characteristic (${
-              notifyEntry.characteristic
+            `Service (${notifyEntry.service}) Characteristic (${notifyEntry.characteristic
             }) Data: ${data.toString("hex")}`
           );
           const decoded = notifyEntry.onNotification(peripheral.id, data);

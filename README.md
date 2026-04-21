@@ -54,6 +54,7 @@ Each device decoder must export:
    - `notify` (optional): Listeners to set up given a serviceUUID and characteristicUUID, these may return decoded data (or null when listening for other information, such as the device sensor scale factor)
    - `units` (optional): Description of unit semantics
    - `frequency` (optional): Description of sampling frequency
+   - `variableFormat` (optional): Set to `true` if the decoder returns different keys depending on the device. Defaults to `false` (fixed format). See [Variable Format Decoders](#variable-format-decoders)
 
 2. A `tests` array containing test cases to validate the decoder functionality. The test array differs depending on if the decoder decodes advertisement data or is streaming. See [ruuvi.js](devices/ruuvi.js) for advertisement decoding, or [muse_v3.js](devices/muse_v3.js) for streaming data.
 
@@ -79,6 +80,31 @@ When data is decoded (via advertisementDecode or notify), the column names used 
 - Use column name `name` (without underscoes) when the value is not expected to be shown on a plot, e.g. timestamp
 - Where possible, the decoded data should include a timestamp if the device sends one.
 - Do not use additional underscores in column names, e.g. `hdr_accelerometer_x_mg` is not allowed by convention. Instead use `hdrAccelerometer_x_mg` so the group is clear.
+
+### Variable Format Decoders
+
+By default, decoders are assumed to have a **fixed format** — every call to `advertisementDecode` or `onNotification` returns the same set of keys. This is the case for devices like RuuviTag, Mopeka, and Muse V3.
+
+Some decoders (e.g. BTHome) are **variable format** — different devices using the same protocol may report different sensors, so the returned keys vary between devices. These decoders should set `variableFormat: true` on the decoder object:
+
+```javascript
+export const decoder = {
+  decoderName: "bthome",
+  serviceUUID: "fcd2",
+  advertisementDecode: decodeBTHome,
+  variableFormat: true,
+};
+```
+
+When a consuming application (e.g. Sensor Logger) encounters a variable-format decoder, it stores the decoded output as a single `_decoded` column containing a JSON-stringified value. Commas within the JSON are replaced with `|` to preserve CSV compatibility:
+
+```
+time,seconds_elapsed,_decoded
+1713500000000000000,0.000,{"temperature_C":22.5|"humidity_percent":45.0}
+1713500001000000000,1.000,{"temperature_C":22.6|"humidity_percent":44.9}
+```
+
+To read the value back, replace `|` with `,` and parse as JSON.
 
 ### Project Structure
 

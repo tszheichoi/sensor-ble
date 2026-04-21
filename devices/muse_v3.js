@@ -41,6 +41,7 @@ const scaleById = {};
 const hardwarePromiseById = {};
 const hardwareById = {};
 const modeById = {};
+const infoResolvers = {};
 
 function computeAcquisitionMode(hardware, software) {
   let mode = 0x20; // Always include timestamp
@@ -206,12 +207,34 @@ function onDataCharacteristic(deviceId, data) {
   return result;
 }
 
+function describeHardware(hw) {
+  const names = [];
+  if (hw & 0x0001) names.push("Gyroscope");
+  if (hw & 0x0002) names.push("Accelerometer");
+  if (hw & 0x0004) names.push("Magnetometer");
+  if (hw & 0x0008) names.push("HDR Accelerometer");
+  if (hw & 0x0010) names.push("Temperature");
+  if (hw & 0x0020) names.push("Humidity");
+  if (hw & 0x0040) names.push("Pressure");
+  if (hw & 0x0080) names.push("Visible Light");
+  if (hw & 0x0100) names.push("IR Light");
+  if (hw & 0x0200) names.push("Range");
+  if (hw & 0x0400) names.push("Microphone");
+  return names.join(", ");
+}
+
 /** @type {NotificationHandler} */
 function onCmdCharacteristic(deviceId, data) {
-  if (data[0] === 0x00 && data[1] === 0x05 && data[2] === 0xc0) {
+  const cmdCode = data[2];
+  const resolvers = infoResolvers[deviceId];
+  if (resolvers?.[cmdCode]) {
+    resolvers[cmdCode](data);
+    delete resolvers[cmdCode];
+  }
+  if (cmdCode === 0xc0) {
     scaleById[deviceId] = decodeFullScale(data[4]);
   }
-  if (data[0] === 0x00 && data[1] === 0x0a && data[2] === 0x8f) {
+  if (cmdCode === 0x8f) {
     const hardware = data.readUInt32LE(4);
     const software = data.readUInt32LE(8);
     hardwareById[deviceId] = hardware;
@@ -220,6 +243,32 @@ function onCmdCharacteristic(deviceId, data) {
       hardwarePromiseById[deviceId](); // resolve sensors promise
     }
   }
+}
+
+async function onConnect(deviceId, bleApi) {
+  const cmds = [0x8a, 0x87, 0x88, 0x8e, 0xa0, 0x8f];
+  const responses = {};
+  infoResolvers[deviceId] = {};
+  const promises = cmds.map((cmd) => new Promise((resolve) => {
+    infoResolvers[deviceId][cmd] = (data) => { responses[cmd] = data; resolve(); };
+  }));
+  for (const cmd of cmds) {
+    await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [cmd, 0x00]);
+  }
+  await Promise.all(promises);
+  delete infoResolvers[deviceId];
+
+  const fw = responses[0x8a];
+  const result = {
+    firmware: `${fw[11]}.${fw[12]}.${fw[13]}`,
+    battery_percent: responses[0x87][4],
+    battery_mV: responses[0x88].readUInt16LE(4),
+    device_id: responses[0x8e].readUInt32LE(4).toString(16).toUpperCase().padStart(8, "0"),
+    memory_percent: responses[0xa0][4],
+    memory_files: responses[0xa0].readUInt16LE(5),
+    sensors: describeHardware(responses[0x8f].readUInt32LE(4)),
+  };
+  return result;
 }
 
 /** @type {StartFunction} */
@@ -253,6 +302,7 @@ export const decoder = {
   name: "muse_v3",
   manufacturer: null,
   advertisementDecode: null,
+  onConnect: onConnect,
   start: start,
   stop: stop,
   notify: [

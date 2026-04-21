@@ -57,6 +57,7 @@
  * @property {(advertisement: Buffer) => SensorValues | undefined} [advertisementDecode] - Optional decode function for BLE advertisements.
  * @property {string | undefined} units - Description of unit semantics.
  * @property {string | undefined} frequency - Description of frequency semantics.
+ * @property {((deviceId: string, bleApi: BleApi) => Promise<SensorValues>) | undefined} onConnect - Optional function called after connecting to read device info.
  * @property {StartFunction | undefined} start - Function called when starting the device.
  * @property {StopFunction | undefined} stop - Function called when stopping the device.
  * @property {NotifyEntry[] | undefined} notify - Array of objects defining notification characteristics.

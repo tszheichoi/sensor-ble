@@ -32,19 +32,6 @@ const AccelerometerHDR_CFG = {
   0x10: { fullScale: 200, sensitivityCoefficient: 98.0 },
   0x30: { fullScale: 400, sensitivityCoefficient: 195.0 },
 };
-const Hardware = {
-  0x0001: "Gyroscope",
-  0x0002: "Acceleration",
-  0x0004: "Magnetometer",
-  0x0008: "HDR_Acceleration",
-  0x0010: "Temperature",
-  0x0020: "Humidity",
-  0x0040: "Pressure",
-  0x0080: "Lux",
-  0x0100: "Lux",
-  0x0200: "Range",
-  0x0400: "Microphone",
-};
 
 const DATA_DIRECT = 0x08;
 const FREQ_25HZ = 0x01;
@@ -53,6 +40,20 @@ const FREQ_100HZ = 0x04;
 const scaleById = {};
 const hardwarePromiseById = {};
 const hardwareById = {};
+const modeById = {};
+
+function computeAcquisitionMode(hardware, software) {
+  let mode = 0x20; // Always include timestamp
+  if (hardware & 0x0001) mode |= 0x01; // Gyroscope
+  if (hardware & 0x0002) mode |= 0x02; // Accelerometer
+  if (hardware & 0x0004) mode |= 0x04; // Magnetometer
+  if (hardware & 0x0008) mode |= 0x08; // HDR Accelerometer
+  if (software & 0x0001) mode |= 0x10; // Orientation (MPE)
+  if ((hardware & 0x0010) && (hardware & 0x0020)) mode |= 0x40; // Temp + Humidity
+  if (hardware & 0x0040) mode |= 0x80; // Temp + Pressure
+  if (hardware & 0x0380) mode |= 0x300; // Range + Light (0x100 documented + 0x200 required by firmware)
+  return mode;
+}
 
 function decodeFullScale(byte) {
   const gyroscopeCode = byte & gyroscopeMask;
@@ -76,9 +77,11 @@ function decodeXYZ(currentPayload, offset, res) {
 }
 
 function decodeTimestamp(currentPayload, offset) {
-  // Note that timestamp is 6 bytes long, and is offset (though we only use relative time to avoid device time drift so ignore the offset)
-  let tempTime =
-    currentPayload.readBigUInt64LE(offset) & BigInt(0x0000ffffffffffff);
+  // Timestamp is 6 bytes, little-endian. Read bytes individually to avoid overrun at end of buffer.
+  let tempTime = 0n;
+  for (let i = 0; i < 6; i++) {
+    tempTime |= BigInt(currentPayload[offset + i]) << BigInt(i * 8);
+  }
   return Number(tempTime);
 }
 
@@ -151,65 +154,56 @@ function onDataCharacteristic(deviceId, data) {
     return;
   }
   const scale = scaleById[deviceId];
+  const mode = modeById[deviceId] || 0x1ff; // fallback to full mode
   let offset = 8;
-  const gyro = decodeXYZ(data, offset, scale.gyroscope.sensitivityCoefficient);
-  offset += 6;
-  const accel = decodeXYZ(
-    data,
-    offset,
-    scale.accelerometer.sensitivityCoefficient
-  );
-  offset += 6;
-  const mag = decodeXYZ(
-    data,
-    offset,
-    scale.magnetometer.sensitivityCoefficient
-  );
-  offset += 6;
-  const hdrAccel = decodeXYZ(
-    data,
-    offset,
-    scale.hdrAccelerometer.sensitivityCoefficient
-  );
-  offset += 6;
-  const orientation = decodeOrientation(data, offset);
-  offset += 6;
-  const timestamp = decodeTimestamp(data, offset);
-  offset += 6;
-  const tempHum = decodeTempHum(data, offset);
-  offset += 6;
-  const tempPress = decodeTempPress(data, offset);
-  offset += 6;
-  const rangeLux = decodeRange(data, offset);
-  offset += 6;
-  // const sound = ""; // TODO: don't know how to decode sound data
-  return {
-    gyroscope_x_dps: gyro[0],
-    gyroscope_y_dps: gyro[1],
-    gyroscope_z_dps: gyro[2],
-    acceleration_x_mg: accel[0],
-    acceleration_y_mg: accel[1],
-    acceleration_z_mg: accel[2],
-    magnetometer_x_uT: mag[0],
-    magnetometer_y_uT: mag[1],
-    magnetometer_z_uT: mag[2],
-    hdrAcceleration_x_mg: hdrAccel[0],
-    hdrAcceleration_y_mg: hdrAccel[1],
-    hdrAcceleration_z_mg: hdrAccel[2],
-    orientation_w_dimensionless: orientation[0],
-    orientation_x_dimensionless: orientation[1],
-    orientation_y_dimensionless: orientation[2],
-    orientation_z_dimensionless: orientation[3],
-    temperature_C: tempHum[0],
-    humidity_percent: tempHum[1],
-    temperature2_C: tempPress[0],
-    pressure_Pa: tempPress[1],
-    range_range_dimensionless: rangeLux[0],
-    range_vis_dimensionless: rangeLux[1],
-    range_ir_dimensionless: rangeLux[2],
-    range_lux_dimensionless: rangeLux[3],
-    timestamp: timestamp,
-  };
+  const result = {};
+  if (mode & 0x01) {
+    const v = decodeXYZ(data, offset, scale.gyroscope.sensitivityCoefficient);
+    offset += 6;
+    result.gyroscope_x_dps = v[0]; result.gyroscope_y_dps = v[1]; result.gyroscope_z_dps = v[2];
+  }
+  if (mode & 0x02) {
+    const v = decodeXYZ(data, offset, scale.accelerometer.sensitivityCoefficient);
+    offset += 6;
+    result.acceleration_x_mg = v[0]; result.acceleration_y_mg = v[1]; result.acceleration_z_mg = v[2];
+  }
+  if (mode & 0x04) {
+    const v = decodeXYZ(data, offset, scale.magnetometer.sensitivityCoefficient);
+    offset += 6;
+    result.magnetometer_x_uT = v[0]; result.magnetometer_y_uT = v[1]; result.magnetometer_z_uT = v[2];
+  }
+  if (mode & 0x08) {
+    const v = decodeXYZ(data, offset, scale.hdrAccelerometer.sensitivityCoefficient);
+    offset += 6;
+    result.hdrAcceleration_x_mg = v[0]; result.hdrAcceleration_y_mg = v[1]; result.hdrAcceleration_z_mg = v[2];
+  }
+  if (mode & 0x10) {
+    const v = decodeOrientation(data, offset);
+    offset += 6;
+    result.orientation_w_dimensionless = v[0]; result.orientation_x_dimensionless = v[1];
+    result.orientation_y_dimensionless = v[2]; result.orientation_z_dimensionless = v[3];
+  }
+  if (mode & 0x20) {
+    result.timestamp = decodeTimestamp(data, offset);
+    offset += 6;
+  }
+  if (mode & 0x40) {
+    const v = decodeTempHum(data, offset);
+    offset += 6;
+    result.temperature_C = v[0]; result.humidity_percent = v[1];
+  }
+  if (mode & 0x80) {
+    const v = decodeTempPress(data, offset);
+    offset += 6;
+    result.temperature2_C = v[0]; result.pressure_Pa = v[1];
+  }
+  if (mode & 0x100) {
+    const v = decodeRange(data, offset);
+    offset += 6;
+    result.range_range_dimensionless = v[0]; result.range_vis_dimensionless = v[1];
+    result.range_ir_dimensionless = v[2]; result.range_lux_dimensionless = v[3];
+  }
+  return result;
 }
 
 /** @type {NotificationHandler} */
@@ -219,13 +213,12 @@ function onCmdCharacteristic(deviceId, data) {
   }
   if (data[0] === 0x00 && data[1] === 0x0a && data[2] === 0x8f) {
     const hardware = data.readUInt32LE(4);
+    const software = data.readUInt32LE(8);
     hardwareById[deviceId] = hardware;
-    // for (const [mask, name] of Object.entries(Hardware)) {
-    //   if ((hardware & Number(mask)) !== 0) {
-    //     // device supports this hardware
-    //   }
-    // }
-    hardwarePromiseById[deviceId](); // resolve sensors promise
+    modeById[deviceId] = computeAcquisitionMode(hardware, software);
+    if (hardwarePromiseById[deviceId]) {
+      hardwarePromiseById[deviceId](); // resolve sensors promise
+    }
   }
 }
 
@@ -236,15 +229,15 @@ async function start(deviceId, isPreview, bleApi) {
   );
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [0x8f, 0x00]); // Get Device Sensors
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [0xc0, 0x00]); // Get Device Scales
-  // TODO: start based on hardware available
   await gotSensors;
+  const mode = modeById[deviceId];
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [
     0x02,
     0x05,
     DATA_DIRECT,
-    0xff,
-    0x03,
-    0x00,
+    mode & 0xff,
+    (mode >> 8) & 0xff,
+    (mode >> 16) & 0xff,
     isPreview ? FREQ_25HZ : FREQ_100HZ,
   ]);
 }
@@ -283,8 +276,7 @@ export const decoder = {
 /** @type {Test[]} */
 export const tests = [
   {
-    // Streaming test. We simulate the messages in data being sent in order to the notify callbacks, and expect the most recent
-    // non-null result to match the expected values.
+    // Streaming test (FULL device). All sensors present (hw=0x7FF, sw=0x01 MPE).
     given: {
       data: [
         {
@@ -324,6 +316,7 @@ export const tests = [
       orientation_x_dimensionless: 0.009582811975463118,
       orientation_y_dimensionless: 0.0021362956633198035,
       orientation_z_dimensionless: 0.0003051850947599719,
+      timestamp: 164674975411,
       temperature_C: 22.20657,
       humidity_percent: 40.820664,
       temperature2_C: 23.2,
@@ -332,6 +325,44 @@ export const tests = [
       range_vis_dimensionless: 85,
       range_ir_dimensionless: 0,
       range_lux_dimensionless: 130.39000000000001,
+    },
+  },
+  {
+    // Streaming test (IMU device). Only gyro+accel+mag (hw=0x07, sw=0x01 MPE).
+    // Packet: 8-byte header + gyro(6) + accel(6) + mag(6) + orient(6) + time(6) + 2 padding bytes.
+    given: {
+      data: [
+        {
+          service: SERVICE_UUID,
+          characteristic: CMD_UUID,
+          data: "000a8f0007000000010000000000000000000000",
+        },
+        {
+          service: SERVICE_UUID,
+          characteristic: CMD_UUID,
+          data: "0005c00047000000000000000000000000000000",
+        },
+        {
+          service: SERVICE_UUID,
+          characteristic: DATA_UUID,
+          data: "b2b6645726470000feff0600faff0b001e00e2032b00c6f9de003a0146000a00b3b6645726000000",
+        },
+      ],
+    },
+    expected: {
+      gyroscope_x_dps: -0.14,
+      gyroscope_y_dps: 0.42000000000000004,
+      gyroscope_z_dps: -0.42000000000000004,
+      acceleration_x_mg: 10.736,
+      acceleration_y_mg: 29.28,
+      acceleration_z_mg: 970.144,
+      magnetometer_x_uT: 12.569424144986845,
+      magnetometer_y_uT: -465.94562993276816,
+      magnetometer_z_uT: 64.89330605086232,
+      orientation_w_dimensionless: 0.9999517552449917,
+      orientation_x_dimensionless: 0.009582811975463118,
+      orientation_y_dimensionless: 0.0021362956633198035,
+      orientation_z_dimensionless: 0.0003051850947599719,
       timestamp: 164674975411,
     },
   },

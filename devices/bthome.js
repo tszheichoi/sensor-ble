@@ -713,6 +713,24 @@ export const tests = [
       'rotation_°': 0
     }
   },
+  {
+    // Regression: truncated text field (0x53) — valid header + packetId field, then bare 0x53 with no length byte.
+    // Without bounds check: data[1] === undefined → slice(NaN) → infinite loop.
+    // After fix: break out of loop, return partial result { packetId: 5 }.
+    given: {
+      serviceData: { fcd2: "40000553" },
+    },
+    expected: { packetId: 5 },
+  },
+  {
+    // Regression: truncated raw field (0x54) — valid header + packetId field, then bare 0x54 with no length byte.
+    // Without bounds check: same infinite-loop path as 0x53.
+    // After fix: break out of loop, return partial result { packetId: 5 }.
+    given: {
+      serviceData: { fcd2: "40000554" },
+    },
+    expected: { packetId: 5 },
+  },
 
 ];
 

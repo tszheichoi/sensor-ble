@@ -83,13 +83,17 @@ function decodeBTHome(_manufacturerData, serviceData) {
       data = data.slice(5);
     } else if (objectId === 0x53) {
       // text sensor (utf8)
+      if (data.length < 2) break;
       const length = data[1];
+      if (data.length < 2 + length) break;
       const value = data.slice(2, 2 + length).toString("utf8");
       result.text = value;
       data = data.slice(2 + length);
     } else if (objectId === 0x54) {
       // raw sensor
+      if (data.length < 2) break;
       const length = data[1];
+      if (data.length < 2 + length) break;
       const value = data.slice(2, 2 + length);
       result.raw = value.toString("hex");
       data = data.slice(2 + length);

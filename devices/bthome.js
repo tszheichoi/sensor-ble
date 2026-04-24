@@ -83,13 +83,17 @@ function decodeBTHome(_manufacturerData, serviceData) {
       data = data.slice(5);
     } else if (objectId === 0x53) {
       // text sensor (utf8)
+      if (data.length < 2) break;
       const length = data[1];
+      if (data.length < 2 + length) break;
       const value = data.slice(2, 2 + length).toString("utf8");
       result.text = value;
       data = data.slice(2 + length);
     } else if (objectId === 0x54) {
       // raw sensor
+      if (data.length < 2) break;
       const length = data[1];
+      if (data.length < 2 + length) break;
       const value = data.slice(2, 2 + length);
       result.raw = value.toString("hex");
       data = data.slice(2 + length);
@@ -712,6 +716,24 @@ export const tests = [
       window: false,
       'rotation_°': 0
     }
+  },
+  {
+    // Regression: truncated text field (0x53) — valid header + packetId field, then bare 0x53 with no length byte.
+    // Without bounds check: data[1] === undefined → slice(NaN) → infinite loop.
+    // After fix: break out of loop, return partial result { packetId: 5 }.
+    given: {
+      serviceData: { fcd2: "40000553" },
+    },
+    expected: { packetId: 5 },
+  },
+  {
+    // Regression: truncated raw field (0x54) — valid header + packetId field, then bare 0x54 with no length byte.
+    // Without bounds check: same infinite-loop path as 0x53.
+    // After fix: break out of loop, return partial result { packetId: 5 }.
+    given: {
+      serviceData: { fcd2: "40000554" },
+    },
+    expected: { packetId: 5 },
   },
 
 ];

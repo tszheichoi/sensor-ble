@@ -503,6 +503,7 @@ const multilevelSensorsArray = [
     size: 2,
     unit: "rpm",
   },
+  { id: 0x65, label: "settings_revision", signed: false, size: 1 }
 ];
 const multilevelSensorDefinitions = new Map(
   multilevelSensorsArray.map((def) => [def.id, def])
@@ -735,6 +736,17 @@ export const tests = [
     },
     expected: { packetId: 5 },
   },
-
+  {
+    given: {
+      serviceData: { fcd2: "403a013c0206530341424354033132336503" },
+    },
+    expected: {
+      button: "press",
+      dimmerRotateRight: 6,
+      text: "ABC",
+      raw: "313233",
+      settings_revision: 3
+    },
+  },
 ];
 

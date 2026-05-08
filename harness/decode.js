@@ -20,14 +20,17 @@ function processServiceData(str) {
   return { [uuid]: Buffer.from(hex, "hex") };
 }
 
-async function run() {
+export async function decodeAll() {
   const decoders = await getDecoders();
   const logsDir = join(rootPath, "sensorlogs");
-  const files = fs.readdirSync(logsDir).filter((f) => f.endsWith(".json"));
+  const files = fs
+    .readdirSync(logsDir)
+    .filter((f) => f.endsWith(".json") && !f.endsWith(".snap.json"));
+  const allResults = [];
 
   for (const file of files) {
     const records = JSON.parse(fs.readFileSync(join(logsDir, file), "utf8"));
-    console.log(`\n--- ${file} (${records.length} records) ---`);
+    const fileResults = [];
 
     for (const record of records) {
       const mfrBuf = processManufacturerData(record.manufacturerData);
@@ -42,14 +45,35 @@ async function run() {
           continue;
         }
         if (result != null) {
-          console.log(decoder.decoderName, record.id, record.time, result);
+          fileResults.push({
+            decoderName: decoder.decoderName,
+            id: record.id,
+            time: record.time,
+            result,
+          });
         }
       }
+    }
+
+    allResults.push({ file, results: fileResults });
+  }
+
+  return allResults;
+}
+
+async function run() {
+  const allResults = await decodeAll();
+  for (const { file, results } of allResults) {
+    console.log(`\n--- ${file} (${results.length} decoded) ---`);
+    for (const { decoderName, id, time, result } of results) {
+      console.log(decoderName, id, time, result);
     }
   }
 }
 
-run().catch((error) => {
-  console.error("Error:", error);
-  process.exit(1);
-});
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+  run().catch((error) => {
+    console.error("Error:", error);
+    process.exit(1);
+  });
+}

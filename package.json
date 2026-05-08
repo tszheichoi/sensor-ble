@@ -7,7 +7,9 @@
   "scripts": {
     "start": "node harness/main.js",
     "test": "node harness/test.js",
-    "decode": "node harness/decode.js"
+    "decode": "node harness/decode.js",
+    "test:regression": "node harness/regression.js",
+    "decode:update": "node harness/regression.js --update"
   },
   "author": "Kelvin Choi",
   "description": "Utilities to connect & decode BLE sensor data",

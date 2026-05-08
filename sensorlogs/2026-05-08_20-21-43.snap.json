@@ -1,0 +1,325 @@
+[
+  {
+    "decoderName": "mopeka",
+    "id": "C3:03:89:6E:8D:17",
+    "time": "1778271703826000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "CC:52:69:42:FD:86",
+    "time": "1778271704175000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 34,
+      "acceleration_y_mg": 0,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "EA:29:C4:AC:F9:E5",
+    "time": "1778271704377000000",
+    "result": {
+      "temperature_C": 17.315,
+      "humidity_percent": 87.045,
+      "pressure_Pa": 92422,
+      "acceleration_x_mg": -616,
+      "acceleration_y_mg": 756,
+      "acceleration_z_mg": -56,
+      "voltage_mV": 2834,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 91,
+      "measurementSequence_dimensionless": 5717,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C1:EF:52:9B:EA:A3",
+    "time": "1778271704603000000",
+    "result": {
+      "voltage_mV": 2.78125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 23,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 141,
+      "acceleration_y_mg": 170,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "3C:2E:F5:6D:86:9B",
+    "time": "1778271704706000000",
+    "result": {
+      "packetId": 53,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "EC:A7:32:91:78:E2",
+    "time": "1778271704732000000",
+    "result": {
+      "voltage_mV": 1.90625,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 17,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 45,
+      "acceleration_y_mg": 20,
+      "rawLevel_mm": 2188,
+      "propaneLevel_mm": 1145.47,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "B0:C7:DE:25:67:7A",
+    "time": "1778271706082000000",
+    "result": {
+      "packetId": 248,
+      "battery_percent": 100,
+      "illuminance_lux": 6,
+      "window": false,
+      "rotation_°": 0
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "DD:79:C6:8F:BD:A2",
+    "time": "1778271706316000000",
+    "result": {
+      "temperature_C": 24.565,
+      "humidity_percent": 72.41250000000001,
+      "pressure_Pa": null,
+      "acceleration_x_mg": -32,
+      "acceleration_y_mg": -128,
+      "acceleration_z_mg": 1016,
+      "voltage_mV": 3157,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 84,
+      "measurementSequence_dimensionless": 14867,
+      "macAddress": "dd:79:c6:8f:bd:a2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "B0:C7:DE:25:67:7A",
+    "time": "1778271707198000000",
+    "result": {
+      "packetId": 250,
+      "battery_percent": 100,
+      "illuminance_lux": 213,
+      "window": true,
+      "rotation_°": 59.2
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "CC:52:69:42:FD:86",
+    "time": "1778271707686000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 34,
+      "acceleration_y_mg": 8,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C1:EF:52:9B:EA:A3",
+    "time": "1778271708109000000",
+    "result": {
+      "voltage_mV": 2.78125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 23,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 146,
+      "acceleration_y_mg": 170,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "B0:C7:DE:25:67:7A",
+    "time": "1778271709201000000",
+    "result": {
+      "packetId": 251,
+      "battery_percent": 100,
+      "illuminance_lux": 445,
+      "window": true,
+      "rotation_°": 44.1
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C3:03:89:6E:8D:17",
+    "time": "1778271714372000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 244,
+      "acceleration_y_mg": 242,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "C2:6E:D1:70:2B:44",
+    "time": "1778271716154000000",
+    "result": {
+      "temperature_C": 23.725,
+      "humidity_percent": 35.875,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 160,
+      "acceleration_y_mg": 92,
+      "acceleration_z_mg": 968,
+      "voltage_mV": 2489,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 78,
+      "measurementSequence_dimensionless": 2025,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "3C:2E:F5:69:84:2C",
+    "time": "1778271719088000000",
+    "result": {
+      "packetId": 120,
+      "battery_percent": 25
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "3C:2E:F5:6D:86:9B",
+    "time": "1778271721043000000",
+    "result": {
+      "packetId": 55,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "CA:E3:54:FA:09:B7",
+    "time": "1778271722008000000",
+    "result": {
+      "voltage_mV": 2.125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 18,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 233,
+      "acceleration_y_mg": 59,
+      "rawLevel_mm": 560,
+      "propaneLevel_mm": 291.49,
+      "macAddress": "fa:09:b7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C3:03:89:6E:8D:17",
+    "time": "1778271724905000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 244,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "3C:2E:F5:69:84:2C",
+    "time": "1778271726762000000",
+    "result": {
+      "packetId": 121,
+      "battery_percent": 74
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "3C:2E:F5:6D:86:9B",
+    "time": "1778271728859000000",
+    "result": {
+      "packetId": 56,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C7:D8:88:F2:EB:44",
+    "time": "1778271728901000000",
+    "result": {
+      "voltage_mV": 1.96875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 16,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 3,
+      "acceleration_y_mg": 7,
+      "rawLevel_mm": 925,
+      "propaneLevel_mm": 487.03,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "F8:95:D1:79:44:21",
+    "time": "1778271729280000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 17,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 46,
+      "rawLevel_mm": 2167,
+      "propaneLevel_mm": 1134.48,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778271731135000000",
+    "result": {
+      "voltage_V": 11.64,
+      "distance (m)_m": 212.60000000000002,
+      "current_A": 0.75,
+      "speed_m/s": 0.72,
+      "acceleration_m/s²": 0.692
+    }
+  }
+]

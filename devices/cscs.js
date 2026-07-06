@@ -67,12 +67,7 @@ function onCSCMeasurement(deviceId, data) {
 
     // Compute wheel RPM from deltas
     if (state.prevWheelRevolutions != null && state.prevWheelEventTime != null) {
-      let revDelta = cumulativeWheelRevolutions - state.prevWheelRevolutions;
-      
-      // Handle uint32 rollover (e.g. going from 0xFFFFFFFF to 0)
-      if (revDelta < -2147483648) {
-        revDelta += 4294967296;
-      }
+      const revDelta = cumulativeWheelRevolutions - state.prevWheelRevolutions;
 
       // Handle uint16 rollover for event time (rolls over every 65536 units = 64s)
       let timeDelta = lastWheelEventTime - state.prevWheelEventTime;
@@ -80,6 +75,7 @@ function onCSCMeasurement(deviceId, data) {
         timeDelta += 65536;
       }
 
+      // Wheel revolutions do not roll over (UINT32 is large enough) and can be negative (backward motion)
       if (timeDelta > 0) {
         const timeDeltaSeconds = timeDelta / 1024;
         // Wheel revolutions per minute
@@ -106,7 +102,7 @@ function onCSCMeasurement(deviceId, data) {
     if (state.prevCrankRevolutions != null && state.prevCrankEventTime != null) {
       let revDelta = cumulativeCrankRevolutions - state.prevCrankRevolutions;
       // Handle uint16 rollover for cumulative crank revolutions
-      if (revDelta < -32768) {
+      if (revDelta < 0) {
         revDelta += 65536;
       }
 
@@ -270,5 +266,87 @@ export const tests = [
       wheelRPM_rpm: 120,
       wheelRevolutionsPerSecond_rps: 2,
     },
+  },
+  {
+    // Backward wheel motion (bike rolled in reverse).
+    // revDelta = -1 (backward). timeDelta = 1024 (1 second) => RPM = -60, rps = -1
+    given: {
+      data: [
+        {
+          service: SERVICE_UUID,
+          characteristic: CSC_MEASUREMENT_UUID,
+          // flags=0x01, wheelRevs=100, wheelEventTime=1024
+          data: "01640000000004",
+        },
+        {
+          service: SERVICE_UUID,
+          characteristic: CSC_MEASUREMENT_UUID,
+          // flags=0x01, wheelRevs=99, wheelEventTime=2048
+          data: "01630000000008",
+        },
+      ],
+    },
+    expected: {
+      cumulativeWheelRevolutions_dimensionless: 99,
+      lastWheelEventTime_1024s: 2048,
+      wheelRPM_rpm: -60,
+      wheelRevolutionsPerSecond_rps: -1,
+    },
+  },
+  {
+    // Crank rollover (uint16 wraps at 65536).
+    // First: crankRevs=65535, Second: crankRevs=100 (wrapped around).
+    // revDelta = 100 - 65535 = -65435, after rollover: 101 (correct: 0->1->...->100 is 101 steps).
+    // timeDelta = 2048 - 1024 = 1024 (1 second). Cadence = (101 / 1) * 60 = 6060 RPM.
+    given: {
+      data: [
+        {
+          service: SERVICE_UUID,
+          characteristic: CSC_MEASUREMENT_UUID,
+          // flags=0x02, crankRevs=65535, crankEventTime=1024
+          data: "02ffff0004",
+        },
+        {
+          service: SERVICE_UUID,
+          characteristic: CSC_MEASUREMENT_UUID,
+          // flags=0x02, crankRevs=100, crankEventTime=2048
+          data: "0264000008",
+        },
+      ],
+    },
+    expected: {
+      cumulativeCrankRevolutions_dimensionless: 100,
+      lastCrankEventTime_1024s: 2048,
+      cadence_rpm: 6060,
+    },
+  },
+  {
+    // Truncated buffer (invalid data).
+    // Only 2 bytes instead of required 7 (flags + 6 for wheel).
+    given: {
+      data: [
+        {
+          service: SERVICE_UUID,
+          characteristic: CSC_MEASUREMENT_UUID,
+          // flags=0x01, but missing data
+          data: "0164",
+        },
+      ],
+    },
+    expected: undefined,
+  },
+  {
+    // No flags set (invalid per spec).
+    given: {
+      data: [
+        {
+          service: SERVICE_UUID,
+          characteristic: CSC_MEASUREMENT_UUID,
+          // flags=0x00 (neither wheel nor crank)
+          data: "00",
+        },
+      ],
+    },
+    expected: undefined,
   },
 ];

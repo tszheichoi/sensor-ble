@@ -191,8 +191,11 @@ function isDecoderValid(decoder, advertisement) {
     return decoder.manufacturer === manufacturerId;
   }
 
-  if (decoder.serviceUUID && advertisement.serviceData) {
-    const serviceData = advertisement.serviceData.find(
+  if (decoder.serviceUUID) {
+    if (advertisement.serviceUuids?.includes(decoder.serviceUUID)) {
+      return true;
+    }
+    const serviceData = advertisement.serviceData?.find(
       (sd) => sd.uuid === decoder.serviceUUID
     );
     if (serviceData) {

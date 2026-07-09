@@ -45,14 +45,41 @@ const infoResolvers = {};
 
 function computeAcquisitionMode(hardware, software) {
   let mode = 0x20; // Always include timestamp
-  if (hardware & 0x0001) mode |= 0x01; // Gyroscope
-  if (hardware & 0x0002) mode |= 0x02; // Accelerometer
-  if (hardware & 0x0004) mode |= 0x04; // Magnetometer
-  if (hardware & 0x0008) mode |= 0x08; // HDR Accelerometer
-  if (software & 0x0001) mode |= 0x10; // Orientation (MPE)
-  if ((hardware & 0x0010) && (hardware & 0x0020)) mode |= 0x40; // Temp + Humidity
-  if (hardware & 0x0040) mode |= 0x80; // Temp + Pressure
-  if (hardware & 0x0380) mode |= 0x300; // Range + Light (0x100 documented + 0x200 required by firmware)
+  let size = 6; // Timestamp guarantees at least 6 bytes
+
+  // Helper to append modes and safely track accumulated packet size
+  const addSensor = (condition, modeFlag) => {
+    if (condition) {
+      mode |= modeFlag;
+      size += 6;
+    }
+  };
+
+  addSensor(hardware & 0x0001, 0x01); // Gyroscope
+  addSensor(hardware & 0x0002, 0x02); // Accelerometer
+  addSensor(hardware & 0x0004, 0x04); // Magnetometer
+  addSensor(hardware & 0x0008, 0x08); // HDR Accelerometer
+  addSensor(software & 0x0001, 0x10); // Orientation (MPE)
+  addSensor(hardware & 0x0010 && hardware & 0x0020, 0x40); // Temp + Humidity
+  addSensor(hardware & 0x0040, 0x80); // Temp + Pressure
+  addSensor(hardware & 0x0380, 0x100); // Range + Light
+  addSensor(hardware & 0x0400, 0x400); // Microphone
+
+  // Valid packet dimensions strictly enforced by the Muse v3 firmware
+  const validSizes = [6, 12, 24, 30, 60];
+  const targetSize = validSizes.find((s) => s >= size) || 60;
+
+  // Pad with unused modes if we fall on an invalid size (e.g., 18, 36, 42, 48, 54 bytes)
+  const padFlags = [0x01, 0x02, 0x04, 0x08, 0x10, 0x40, 0x80, 0x100, 0x400];
+
+  for (const flag of padFlags) {
+    if (size >= targetSize) break;
+    if (!(mode & flag)) {
+      mode |= flag;
+      size += 6;
+    }
+  }
+
   return mode;
 }
 
@@ -92,7 +119,7 @@ function decodeOrientation(currentPayload, offset) {
     currentData[i + 1] = currentPayload.readInt16LE(offset + i * 2) / 32767;
   }
   currentData[0] = Math.sqrt(
-    1 - (currentData[1] ** 2 + currentData[2] ** 2 + currentData[3] ** 2)
+    1 - (currentData[1] ** 2 + currentData[2] ** 2 + currentData[3] ** 2),
   );
   return currentData;
 }
@@ -161,28 +188,50 @@ function onDataCharacteristic(deviceId, data) {
   if (mode & 0x01) {
     const v = decodeXYZ(data, offset, scale.gyroscope.sensitivityCoefficient);
     offset += 6;
-    result.gyroscope_x_dps = v[0]; result.gyroscope_y_dps = v[1]; result.gyroscope_z_dps = v[2];
+    result.gyroscope_x_dps = v[0];
+    result.gyroscope_y_dps = v[1];
+    result.gyroscope_z_dps = v[2];
   }
   if (mode & 0x02) {
-    const v = decodeXYZ(data, offset, scale.accelerometer.sensitivityCoefficient);
+    const v = decodeXYZ(
+      data,
+      offset,
+      scale.accelerometer.sensitivityCoefficient,
+    );
     offset += 6;
-    result.acceleration_x_mg = v[0]; result.acceleration_y_mg = v[1]; result.acceleration_z_mg = v[2];
+    result.acceleration_x_mg = v[0];
+    result.acceleration_y_mg = v[1];
+    result.acceleration_z_mg = v[2];
   }
   if (mode & 0x04) {
-    const v = decodeXYZ(data, offset, scale.magnetometer.sensitivityCoefficient);
+    const v = decodeXYZ(
+      data,
+      offset,
+      scale.magnetometer.sensitivityCoefficient,
+    );
     offset += 6;
-    result.magnetometer_x_uT = v[0]; result.magnetometer_y_uT = v[1]; result.magnetometer_z_uT = v[2];
+    result.magnetometer_x_uT = v[0];
+    result.magnetometer_y_uT = v[1];
+    result.magnetometer_z_uT = v[2];
   }
   if (mode & 0x08) {
-    const v = decodeXYZ(data, offset, scale.hdrAccelerometer.sensitivityCoefficient);
+    const v = decodeXYZ(
+      data,
+      offset,
+      scale.hdrAccelerometer.sensitivityCoefficient,
+    );
     offset += 6;
-    result.hdrAcceleration_x_mg = v[0]; result.hdrAcceleration_y_mg = v[1]; result.hdrAcceleration_z_mg = v[2];
+    result.hdrAcceleration_x_mg = v[0];
+    result.hdrAcceleration_y_mg = v[1];
+    result.hdrAcceleration_z_mg = v[2];
   }
   if (mode & 0x10) {
     const v = decodeOrientation(data, offset);
     offset += 6;
-    result.orientation_w_dimensionless = v[0]; result.orientation_x_dimensionless = v[1];
-    result.orientation_y_dimensionless = v[2]; result.orientation_z_dimensionless = v[3];
+    result.orientation_w_dimensionless = v[0];
+    result.orientation_x_dimensionless = v[1];
+    result.orientation_y_dimensionless = v[2];
+    result.orientation_z_dimensionless = v[3];
   }
   if (mode & 0x20) {
     result.timestamp = decodeTimestamp(data, offset);
@@ -191,18 +240,22 @@ function onDataCharacteristic(deviceId, data) {
   if (mode & 0x40) {
     const v = decodeTempHum(data, offset);
     offset += 6;
-    result.temperature_C = v[0]; result.humidity_percent = v[1];
+    result.temperature_C = v[0];
+    result.humidity_percent = v[1];
   }
   if (mode & 0x80) {
     const v = decodeTempPress(data, offset);
     offset += 6;
-    result.temperature2_C = v[0]; result.pressure_Pa = v[1];
+    result.temperature2_C = v[0];
+    result.pressure_Pa = v[1];
   }
   if (mode & 0x100) {
     const v = decodeRange(data, offset);
     offset += 6;
-    result.range_range_dimensionless = v[0]; result.range_vis_dimensionless = v[1];
-    result.range_ir_dimensionless = v[2]; result.range_lux_dimensionless = v[3];
+    result.range_range_dimensionless = v[0];
+    result.range_vis_dimensionless = v[1];
+    result.range_ir_dimensionless = v[2];
+    result.range_lux_dimensionless = v[3];
   }
   return result;
 }
@@ -249,9 +302,15 @@ async function onConnect(deviceId, bleApi) {
   const cmds = [0x8a, 0x87, 0x88, 0x8e, 0xa0, 0x8f];
   const responses = {};
   infoResolvers[deviceId] = {};
-  const promises = cmds.map((cmd) => new Promise((resolve) => {
-    infoResolvers[deviceId][cmd] = (data) => { responses[cmd] = data; resolve(); };
-  }));
+  const promises = cmds.map(
+    (cmd) =>
+      new Promise((resolve) => {
+        infoResolvers[deviceId][cmd] = (data) => {
+          responses[cmd] = data;
+          resolve();
+        };
+      }),
+  );
   for (const cmd of cmds) {
     await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [cmd, 0x00]);
   }
@@ -263,7 +322,11 @@ async function onConnect(deviceId, bleApi) {
     firmware: `${fw[11]}.${fw[12]}.${fw[13]}`,
     battery_percent: responses[0x87][4],
     battery_mV: responses[0x88].readUInt16LE(4),
-    device_id: responses[0x8e].readUInt32LE(4).toString(16).toUpperCase().padStart(8, "0"),
+    device_id: responses[0x8e]
+      .readUInt32LE(4)
+      .toString(16)
+      .toUpperCase()
+      .padStart(8, "0"),
     memory_percent: responses[0xa0][4],
     memory_files: responses[0xa0].readUInt16LE(5),
     sensors: describeHardware(responses[0x8f].readUInt32LE(4)),
@@ -274,7 +337,7 @@ async function onConnect(deviceId, bleApi) {
 /** @type {StartFunction} */
 async function start(deviceId, isPreview, bleApi) {
   const gotSensors = new Promise(
-    (resolve) => (hardwarePromiseById[deviceId] = resolve)
+    (resolve) => (hardwarePromiseById[deviceId] = resolve),
   );
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [0x8f, 0x00]); // Get Device Sensors
   await bleApi.write(deviceId, SERVICE_UUID, CMD_UUID, [0xc0, 0x00]); // Get Device Scales

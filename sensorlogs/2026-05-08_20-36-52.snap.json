@@ -1,0 +1,278 @@
+[
+  {
+    "decoderName": "ruuvi",
+    "id": "DD:79:C6:8F:BD:A2",
+    "time": "1778272623766000000",
+    "result": {
+      "temperature_C": 24.76,
+      "humidity_percent": 72.3925,
+      "pressure_Pa": null,
+      "acceleration_x_mg": -32,
+      "acceleration_y_mg": -124,
+      "acceleration_z_mg": 1020,
+      "voltage_mV": 3157,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 90,
+      "measurementSequence_dimensionless": 14882,
+      "macAddress": "dd:79:c6:8f:bd:a2"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C3:03:89:6E:8D:17",
+    "time": "1778272613306000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C3:03:89:6E:8D:17",
+    "time": "1778272623833000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 246,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C3:03:89:6E:8D:17",
+    "time": "1778272634367000000",
+    "result": {
+      "voltage_mV": 2.71875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 26,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272612172000000",
+    "result": {
+      "voltage_V": 9.73,
+      "distance (m)_m": 213.9,
+      "current_A": 1.83,
+      "speed_m/s": 2.1,
+      "acceleration_m/s²": 0.63
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272613312000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272615169000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272618012000000",
+    "result": {
+      "voltage_V": 12.83,
+      "distance (m)_m": 212.20000000000002,
+      "current_A": 0.71,
+      "speed_m/s": -1.28,
+      "acceleration_m/s²": 0.696
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272619011000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272620017000000",
+    "result": {
+      "voltage_V": 12.21,
+      "distance (m)_m": 212.20000000000002,
+      "current_A": 1.4000000000000001,
+      "speed_m/s": 1.06,
+      "acceleration_m/s²": 0.632
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272621871000000",
+    "result": {
+      "voltage_V": 12.14,
+      "distance (m)_m": 212.5,
+      "current_A": 0.21,
+      "speed_m/s": 0.44,
+      "acceleration_m/s²": 0.51
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272622874000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272624735000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272626583000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272628507000000",
+    "result": {
+      "voltage_V": 10.99,
+      "distance (m)_m": 212.9,
+      "current_A": 0.34900000000000003,
+      "speed_m/s": 2.26,
+      "acceleration_m/s²": 0.428
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272629561000000",
+    "result": {
+      "voltage_V": 10.6,
+      "distance (m)_m": 212.60000000000002,
+      "current_A": 1.35,
+      "speed_m/s": 0.27999999999999997,
+      "acceleration_m/s²": 0.36
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272631364000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272632508000000",
+    "result": {
+      "voltage_V": 11.03,
+      "distance (m)_m": 213.3,
+      "current_A": 2.06,
+      "speed_m/s": 0.44,
+      "acceleration_m/s²": 0.492
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272634354000000",
+    "result": {
+      "voltage_V": 10.75,
+      "distance (m)_m": 213.10000000000002,
+      "current_A": 2.14,
+      "speed_m/s": 1.44,
+      "acceleration_m/s²": 0.412
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "48:CA:43:3A:34:05",
+    "time": "1778272636199000000",
+    "result": {
+      "voltage_V": 11.28,
+      "distance (m)_m": 212.4,
+      "current_A": 0.92,
+      "speed_m/s": 1.28,
+      "acceleration_m/s²": 0.5419999999999999
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C1:EF:52:9B:EA:A3",
+    "time": "1778272620962000000",
+    "result": {
+      "voltage_mV": 2.78125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 23,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 152,
+      "acceleration_y_mg": 168,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "C1:EF:52:9B:EA:A3",
+    "time": "1778272631514000000",
+    "result": {
+      "voltage_mV": 2.78125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 23,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 146,
+      "acceleration_y_mg": 173,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  }
+]

@@ -1,0 +1,4335 @@
+[
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718550582000000",
+    "result": {
+      "voltage_V": 9.94,
+      "distance (m)_m": 213.8,
+      "current_A": 0.47900000000000004,
+      "speed_m/s": 0.76,
+      "acceleration_m/s²": 0.46599999999999997
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718551253000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718551401000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.17,
+      "pressure_Pa": 91695,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64913,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718551900000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718552666000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.18,
+      "pressure_Pa": 91693,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64914,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718552945000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 61,
+      "acceleration_y_mg": 26,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718553047000000",
+    "result": {
+      "voltage_V": 11.91,
+      "distance (m)_m": 212.3,
+      "current_A": 0.77,
+      "speed_m/s": 0.36,
+      "acceleration_m/s²": 0.486
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718553303000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718553955000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.18,
+      "pressure_Pa": 91693,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64914,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718554198000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718554761000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 253,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718555214000000",
+    "result": {
+      "voltage_V": 11.66,
+      "distance (m)_m": 213.4,
+      "current_A": 0.74,
+      "speed_m/s": -0.04,
+      "acceleration_m/s²": 0.566
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718555234000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1775,
+      "pressure_Pa": 91694,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -568,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64915,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718556069000000",
+    "result": {
+      "packetId": 91,
+      "battery_percent": 93
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718556221000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718556522000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1775,
+      "pressure_Pa": 91694,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -568,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64915,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718556738000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 43,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718556809000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 249,
+      "acceleration_y_mg": 242,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718556851000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 61,
+      "acceleration_y_mg": 26,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718557056000000",
+    "result": {
+      "packetId": 95,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718557282000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718557808000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91692,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64916,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718558105000000",
+    "result": {
+      "packetId": 98,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8823e5ef-37d5-684a-61d2-0582a725f0e8",
+    "time": "1774718558233000000",
+    "result": {
+      "voltage_mV": 2.09375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 235,
+      "acceleration_y_mg": 88,
+      "rawLevel_mm": 173,
+      "propaneLevel_mm": 95.17,
+      "macAddress": "fa:09:b7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718558277000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718558284000000",
+    "result": {
+      "voltage_V": 10.41,
+      "distance (m)_m": 213.60000000000002,
+      "current_A": 0.59,
+      "speed_m/s": -1.26,
+      "acceleration_m/s²": 0.5
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718558396000000",
+    "result": {
+      "temperature_C": 18.6,
+      "humidity_percent": 27.052500000000002,
+      "pressure_Pa": 91667,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 4,
+      "acceleration_z_mg": 1068,
+      "voltage_mV": 2974,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23919,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718559089000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 14,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718559103000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91692,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64916,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718559438000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718560325000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 244,
+      "acceleration_y_mg": 242,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718560381000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1825,
+      "pressure_Pa": 91691,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64917,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718560448000000",
+    "result": {
+      "voltage_V": 9.03,
+      "distance (m)_m": 212.20000000000002,
+      "current_A": 1.56,
+      "speed_m/s": 1.24,
+      "acceleration_m/s²": 0.438
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718560640000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 43,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718560753000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 27,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "6ec7c2f2-bd98-5e88-19ed-776a439185ea",
+    "time": "1774718560826000000",
+    "result": {
+      "temperature_C": 13.975,
+      "humidity_percent": 68.71000000000001,
+      "pressure_Pa": null,
+      "acceleration_x_mg": -120,
+      "acceleration_y_mg": 152,
+      "acceleration_z_mg": -988,
+      "voltage_mV": 3013,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 74,
+      "measurementSequence_dimensionless": 23971,
+      "macAddress": "dd:79:c6:8f:bd:a2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718561449000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718561545000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1825,
+      "pressure_Pa": 91691,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64917,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718561793000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 248,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8823e5ef-37d5-684a-61d2-0582a725f0e8",
+    "time": "1774718562133000000",
+    "result": {
+      "voltage_mV": 2.09375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 235,
+      "acceleration_y_mg": 88,
+      "rawLevel_mm": 173,
+      "propaneLevel_mm": 95.17,
+      "macAddress": "fa:09:b7"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718562585000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1825,
+      "pressure_Pa": 91691,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64917,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718562600000000",
+    "result": {
+      "voltage_V": 11.98,
+      "distance (m)_m": 212.9,
+      "current_A": 1.04,
+      "speed_m/s": -0.38,
+      "acceleration_m/s²": 0.519999
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718563551000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 4,
+      "acceleration_y_mg": 35,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718563682000000",
+    "result": {
+      "temperature_C": 7.4,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91697,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64918,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718563754000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718563792000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 77,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718563834000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 246,
+      "acceleration_y_mg": 230,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718563888000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 155,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718564067000000",
+    "result": {
+      "packetId": 92,
+      "battery_percent": 93
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718564545000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 3,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 459.53,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718564663000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 27,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718564733000000",
+    "result": {
+      "temperature_C": 7.4,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91697,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64918,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718564763000000",
+    "result": {
+      "voltage_V": 10.68,
+      "distance (m)_m": 212,
+      "current_A": 0.72,
+      "speed_m/s": 0.94,
+      "acceleration_m/s²": 0.46399999999999997
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718565056000000",
+    "result": {
+      "packetId": 99,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718565302000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 253,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718565912000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718566110000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 14,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718566810000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.1675,
+      "pressure_Pa": 91700,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64919,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718566916000000",
+    "result": {
+      "voltage_V": 9.700000000000001,
+      "distance (m)_m": 212.9,
+      "current_A": 0.52,
+      "speed_m/s": -0.16,
+      "acceleration_m/s²": 0.384
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718567351000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718567391000000",
+    "result": {
+      "temperature_C": 18.6,
+      "humidity_percent": 27.052500000000002,
+      "pressure_Pa": 91667,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 4,
+      "acceleration_z_mg": 1068,
+      "voltage_mV": 2974,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23919,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718567454000000",
+    "result": {
+      "voltage_mV": 1.96875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 3,
+      "acceleration_y_mg": 35,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718567787000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 155,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718568054000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718568085000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.17,
+      "pressure_Pa": 91704,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64920,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8823e5ef-37d5-684a-61d2-0582a725f0e8",
+    "time": "1774718568099000000",
+    "result": {
+      "voltage_mV": 2.03125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 234,
+      "acceleration_y_mg": 88,
+      "rawLevel_mm": 173,
+      "propaneLevel_mm": 95.17,
+      "macAddress": "fa:09:b7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718568448000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 3,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 459.53,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718568565000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 26,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718568820000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 5,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718569079000000",
+    "result": {
+      "voltage_V": 12.48,
+      "distance (m)_m": 213.3,
+      "current_A": 1.1,
+      "speed_m/s": 0.09999899999999999,
+      "acceleration_m/s²": 0.6699999999999999
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718569376000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.17,
+      "pressure_Pa": 91704,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64920,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718569620000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 14,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718570085000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718570659000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1825,
+      "pressure_Pa": 91710,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64921,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718570861000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 244,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718571230000000",
+    "result": {
+      "voltage_V": 11.57,
+      "distance (m)_m": 212.8,
+      "current_A": 1.8,
+      "speed_m/s": -0.94,
+      "acceleration_m/s²": 0.488
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718571599000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 76,
+      "acceleration_y_mg": 22,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718571696000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 155,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718571946000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1825,
+      "pressure_Pa": 91710,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64921,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718572304000000",
+    "result": {
+      "voltage_V": 11.78,
+      "distance (m)_m": 213,
+      "current_A": 1.95,
+      "speed_m/s": -1.1199999999999999,
+      "acceleration_m/s²": 0.515999
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718572348000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 3,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 459.53,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718572531000000",
+    "result": {
+      "packetId": 97,
+      "battery_percent": 93
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "77d0b863-bdb9-e712-bb3b-c5b15959be20",
+    "time": "1774718572663000000",
+    "result": {
+      "temperature_C": 14.46,
+      "humidity_percent": 33.9475,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 596,
+      "acceleration_y_mg": -828,
+      "acceleration_z_mg": -48,
+      "voltage_mV": 2415,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 236,
+      "measurementSequence_dimensionless": 11129,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718573133000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 14,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718573212000000",
+    "result": {
+      "packetId": 100,
+      "battery_percent": 82
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718573227000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.155,
+      "pressure_Pa": 91714,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64922,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718573308000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718574307000000",
+    "result": {
+      "voltage_V": 9.03,
+      "distance (m)_m": 212.60000000000002,
+      "current_A": 0.49,
+      "speed_m/s": 0.76,
+      "acceleration_m/s²": 0.36
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718574370000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 240,
+      "acceleration_y_mg": 235,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718574522000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.155,
+      "pressure_Pa": 91714,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64922,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718575468000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718576253000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 3,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 459.53,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718576469000000",
+    "result": {
+      "voltage_V": 12.280000000000001,
+      "distance (m)_m": 213.20000000000002,
+      "current_A": 2.12,
+      "speed_m/s": 1.5999999999999999,
+      "acceleration_m/s²": 0.39599999999999996
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718577079000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.16,
+      "pressure_Pa": 91701,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64923,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718577622000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718577876000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 242,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718578928000000",
+    "result": {
+      "voltage_V": 10.63,
+      "distance (m)_m": 213.10000000000002,
+      "current_A": 0.329,
+      "speed_m/s": -0.8999999999999999,
+      "acceleration_m/s²": 0.624
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718579353000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718579413000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 76,
+      "acceleration_y_mg": 22,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718579660000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91694,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64924,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718580092000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718580280000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 26,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718580934000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.165,
+      "pressure_Pa": 91698,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64925,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718581056000000",
+    "result": {
+      "packetId": 101,
+      "battery_percent": 82
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718581478000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718582784000000",
+    "result": {
+      "voltage_V": 12.780000000000001,
+      "distance (m)_m": 212.8,
+      "current_A": 0.65,
+      "speed_m/s": -0.339999,
+      "acceleration_m/s²": 0.326
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718583061000000",
+    "result": {
+      "voltage_mV": 1.96875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 4,
+      "acceleration_y_mg": 35,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718583675000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 14,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718583788000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718585099000000",
+    "result": {
+      "voltage_V": 9.86,
+      "distance (m)_m": 212,
+      "current_A": 1.84,
+      "speed_m/s": 1.16,
+      "acceleration_m/s²": 0.644
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718586077000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1825,
+      "pressure_Pa": 91708,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64927,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718586237000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718586373000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 253,
+      "acceleration_y_mg": 242,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718587220000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 77,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718587263000000",
+    "result": {
+      "voltage_V": 10.17,
+      "distance (m)_m": 213.8,
+      "current_A": 1.8900000000000001,
+      "speed_m/s": -1.38,
+      "acceleration_m/s²": 0.582
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718588415000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718588481000000",
+    "result": {
+      "voltage_V": 9.98,
+      "distance (m)_m": 213.10000000000002,
+      "current_A": 1.07,
+      "speed_m/s": -0.74,
+      "acceleration_m/s²": 0.472
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718589363000000",
+    "result": {
+      "packetId": 102,
+      "battery_percent": 82
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718589958000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718590691000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718590871000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 4,
+      "acceleration_y_mg": 36,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718591104000000",
+    "result": {
+      "voltage_V": 9.44,
+      "distance (m)_m": 212.8,
+      "current_A": 0.52,
+      "speed_m/s": -1.26,
+      "acceleration_m/s²": 0.604
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718591214000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 155,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718591218000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1775,
+      "pressure_Pa": 91713,
+      "acceleration_x_mg": 760,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64929,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718592487000000",
+    "result": {
+      "voltage_V": 10.11,
+      "distance (m)_m": 212.70000000000002,
+      "current_A": 0.74,
+      "speed_m/s": 1.42,
+      "acceleration_m/s²": 0.39999999999999997
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718593397000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 250,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718593636000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718593793000000",
+    "result": {
+      "temperature_C": 7.365,
+      "humidity_percent": 65.1575,
+      "pressure_Pa": 91701,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64930,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718594650000000",
+    "result": {
+      "voltage_V": 11.83,
+      "distance (m)_m": 212.20000000000002,
+      "current_A": 1.67,
+      "speed_m/s": 1.3,
+      "acceleration_m/s²": 0.53
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718595122000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 155,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718595443000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 240,
+      "acceleration_y_mg": 233,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718595778000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 3,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 41,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 459.53,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718595797000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718595896000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 27,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718596219000000",
+    "result": {
+      "packetId": 100,
+      "battery_percent": 93
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718596798000000",
+    "result": {
+      "voltage_V": 11.27,
+      "distance (m)_m": 212.20000000000002,
+      "current_A": 1.94,
+      "speed_m/s": 0.58,
+      "acceleration_m/s²": 0.494
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718597052000000",
+    "result": {
+      "packetId": 103,
+      "battery_percent": 82
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718597645000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.2,
+      "pressure_Pa": 91697,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -584,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64931,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718597718000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718598123000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718599022000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718599282000000",
+    "result": {
+      "voltage_V": 11.36,
+      "distance (m)_m": 213.8,
+      "current_A": 0.61,
+      "speed_m/s": 0.58,
+      "acceleration_m/s²": 0.40599999999999997
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718599684000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 3,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 41,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 459.53,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718599797000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 27,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718600341000000",
+    "result": {
+      "voltage_V": 12.4,
+      "distance (m)_m": 212.3,
+      "current_A": 0.3,
+      "speed_m/s": 1.52,
+      "acceleration_m/s²": 0.534
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718600416000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 248,
+      "acceleration_y_mg": 250,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718601498000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718601502000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.19500000000001,
+      "pressure_Pa": 91704,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64933,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718602462000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 233,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718602590000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 4,
+      "acceleration_y_mg": 36,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718602649000000",
+    "result": {
+      "voltage_V": 9.01,
+      "distance (m)_m": 212.70000000000002,
+      "current_A": 0.8,
+      "speed_m/s": -0.459999,
+      "acceleration_m/s²": 0.496
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718602838000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 2,
+      "acceleration_x_mg": 78,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8823e5ef-37d5-684a-61d2-0582a725f0e8",
+    "time": "1774718603259000000",
+    "result": {
+      "voltage_mV": 2.09375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 234,
+      "acceleration_y_mg": 88,
+      "rawLevel_mm": 172,
+      "propaneLevel_mm": 95.12,
+      "macAddress": "fa:09:b7"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718603371000000",
+    "result": {
+      "temperature_C": 18.6,
+      "humidity_percent": 27.055,
+      "pressure_Pa": 91672,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 8,
+      "acceleration_z_mg": 1060,
+      "voltage_mV": 3002,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23920,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718603925000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718603955000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718604740000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718605116000000",
+    "result": {
+      "voltage_V": 12.85,
+      "distance (m)_m": 213.4,
+      "current_A": 2.19,
+      "speed_m/s": -1.3199999999999998,
+      "acceleration_m/s²": 0.39599999999999996
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718605357000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.165,
+      "pressure_Pa": 91702,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64934,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718605513000000",
+    "result": {
+      "packetId": 104,
+      "battery_percent": 82
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718606127000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718606496000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 4,
+      "acceleration_y_mg": 36,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718606844000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718607134000000",
+    "result": {
+      "voltage_V": 11.75,
+      "distance (m)_m": 212.3,
+      "current_A": 0.73,
+      "speed_m/s": 1.6199999999999999,
+      "acceleration_m/s²": 0.596
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718607434000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 2,
+      "acceleration_y_mg": 248,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718607492000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 24,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718607929000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1775,
+      "pressure_Pa": 91705,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64935,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718608353000000",
+    "result": {
+      "voltage_V": 11.85,
+      "distance (m)_m": 213.8,
+      "current_A": 1.06,
+      "speed_m/s": -1.4,
+      "acceleration_m/s²": 0.512
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "77d0b863-bdb9-e712-bb3b-c5b15959be20",
+    "time": "1774718608659000000",
+    "result": {
+      "temperature_C": 14.46,
+      "humidity_percent": 33.9475,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 596,
+      "acceleration_y_mg": -828,
+      "acceleration_z_mg": -48,
+      "voltage_mV": 2415,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 236,
+      "measurementSequence_dimensionless": 11129,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718609354000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718609482000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 240,
+      "acceleration_y_mg": 235,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718610494000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1675,
+      "pressure_Pa": 91705,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64936,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718610514000000",
+    "result": {
+      "voltage_V": 10.73,
+      "distance (m)_m": 213.5,
+      "current_A": 1.28,
+      "speed_m/s": 2.48,
+      "acceleration_m/s²": 0.35799899999999996
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718610651000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 2,
+      "acceleration_x_mg": 78,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718610748000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718611399000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 24,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718611516000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718611770000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718611784000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1775,
+      "pressure_Pa": 91708,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2746,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64937,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718612064000000",
+    "result": {
+      "packetId": 102,
+      "battery_percent": 35
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718612367000000",
+    "result": {
+      "temperature_C": 18.6,
+      "humidity_percent": 27.055,
+      "pressure_Pa": 91672,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 8,
+      "acceleration_z_mg": 1060,
+      "voltage_mV": 3002,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23920,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718612669000000",
+    "result": {
+      "voltage_V": 10.83,
+      "distance (m)_m": 213.4,
+      "current_A": 1.61,
+      "speed_m/s": 0.08,
+      "acceleration_m/s²": 0.46399999999999997
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718613514000000",
+    "result": {
+      "packetId": 105,
+      "battery_percent": 82
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718613820000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "0d5448ee-49e4-4a55-cbb5-b84a9c9bc172",
+    "time": "1774718614303000000",
+    "result": {
+      "voltage_mV": 1.96875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 6,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 4,
+      "acceleration_y_mg": 36,
+      "rawLevel_mm": 2040,
+      "propaneLevel_mm": 1134.08,
+      "macAddress": "79:44:21"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718614656000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718614829000000",
+    "result": {
+      "voltage_V": 12.25,
+      "distance (m)_m": 212.9,
+      "current_A": 0.61,
+      "speed_m/s": -0.13999899999999998,
+      "acceleration_m/s²": 0.314
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718615309000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718616501000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 235,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718616525000000",
+    "result": {
+      "voltage_V": 9.42,
+      "distance (m)_m": 212.5,
+      "current_A": 1.07,
+      "speed_m/s": -0.24,
+      "acceleration_m/s²": 0.40599999999999997
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "77d0b863-bdb9-e712-bb3b-c5b15959be20",
+    "time": "1774718617660000000",
+    "result": {
+      "temperature_C": 14.46,
+      "humidity_percent": 33.9475,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 596,
+      "acceleration_y_mg": -828,
+      "acceleration_z_mg": -48,
+      "voltage_mV": 2415,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 236,
+      "measurementSequence_dimensionless": 11129,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718617830000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718618789000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718619146000000",
+    "result": {
+      "voltage_V": 9.64,
+      "distance (m)_m": 213.20000000000002,
+      "current_A": 0.92,
+      "speed_m/s": -0.94,
+      "acceleration_m/s²": 0.652
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718619215000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718619318000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 28,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718620290000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718620779000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.18,
+      "pressure_Pa": 91702,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64940,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718621295000000",
+    "result": {
+      "voltage_V": 9.61,
+      "distance (m)_m": 212.3,
+      "current_A": 0.24,
+      "speed_m/s": 0.919999,
+      "acceleration_m/s²": 0.46399999999999997
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718621366000000",
+    "result": {
+      "temperature_C": 18.6,
+      "humidity_percent": 27.055,
+      "pressure_Pa": 91672,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 8,
+      "acceleration_z_mg": 1060,
+      "voltage_mV": 3002,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23920,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718621488000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 253,
+      "acceleration_y_mg": 242,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718622299000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718622302000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718622472000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 155,
+      "acceleration_y_mg": 202,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718623118000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718623302000000",
+    "result": {
+      "voltage_V": 9.22,
+      "distance (m)_m": 213.60000000000002,
+      "current_A": 0.659,
+      "speed_m/s": 1.46,
+      "acceleration_m/s²": 0.34199999999999997
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718624628000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.18,
+      "pressure_Pa": 91698,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64942,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718624997000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718625006000000",
+    "result": {
+      "voltage_V": 11.14,
+      "distance (m)_m": 213.60000000000002,
+      "current_A": 0.39,
+      "speed_m/s": 2.26,
+      "acceleration_m/s²": 0.5519999999999999
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718626536000000",
+    "result": {
+      "voltage_V": 12.030000000000001,
+      "distance (m)_m": 213.60000000000002,
+      "current_A": 2.2,
+      "speed_m/s": 2.3,
+      "acceleration_m/s²": 0.5439999999999999
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718627025000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718627037000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 244,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718627197000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.1775,
+      "pressure_Pa": 91680,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64943,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718627686000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718628061000000",
+    "result": {
+      "packetId": 104,
+      "battery_percent": 35
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718628837000000",
+    "result": {
+      "voltage_V": 12.59,
+      "distance (m)_m": 212.9,
+      "current_A": 1.35,
+      "speed_m/s": -0.519999,
+      "acceleration_m/s²": 0.518
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718629208000000",
+    "result": {
+      "packetId": 107,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718629323000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718629848000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718630282000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 201,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718630932000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 42,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718630997000000",
+    "result": {
+      "voltage_V": 11.33,
+      "distance (m)_m": 213.3,
+      "current_A": 1.42,
+      "speed_m/s": -0.7,
+      "acceleration_m/s²": 0.422
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718631041000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 28,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718631051000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91688,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64944,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718632012000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718632020000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 0,
+      "acceleration_y_mg": 248,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718633163000000",
+    "result": {
+      "voltage_V": 11.540000000000001,
+      "distance (m)_m": 212.9,
+      "current_A": 1.55,
+      "speed_m/s": -0.72,
+      "acceleration_m/s²": 0.43199899999999997
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718633630000000",
+    "result": {
+      "temperature_C": 7.4,
+      "humidity_percent": 65.18,
+      "pressure_Pa": 91699,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64945,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718634185000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 201,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718634546000000",
+    "result": {
+      "voltage_V": 12.23,
+      "distance (m)_m": 212,
+      "current_A": 2.04,
+      "speed_m/s": 1.66,
+      "acceleration_m/s²": 0.606
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718634834000000",
+    "result": {
+      "voltage_mV": 1.96875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 41,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718634905000000",
+    "result": {
+      "temperature_C": 7.390000000000001,
+      "humidity_percent": 65.1725,
+      "pressure_Pa": 91684,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 364,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64946,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718635548000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "77d0b863-bdb9-e712-bb3b-c5b15959be20",
+    "time": "1774718635624000000",
+    "result": {
+      "temperature_C": 14.49,
+      "humidity_percent": 33.97,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 596,
+      "acceleration_y_mg": -824,
+      "acceleration_z_mg": -52,
+      "voltage_mV": 2275,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 236,
+      "measurementSequence_dimensionless": 11130,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718636342000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718636706000000",
+    "result": {
+      "voltage_V": 9.78,
+      "distance (m)_m": 213.5,
+      "current_A": 0.40900000000000003,
+      "speed_m/s": -1.44,
+      "acceleration_m/s²": 0.416
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718637047000000",
+    "result": {
+      "packetId": 108,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718637475000000",
+    "result": {
+      "temperature_C": 7.4,
+      "humidity_percent": 65.1625,
+      "pressure_Pa": 91680,
+      "acceleration_x_mg": 780,
+      "acceleration_y_mg": 364,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64947,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718638319000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718638840000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 28,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718639043000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 250,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718639320000000",
+    "result": {
+      "voltage_V": 12.84,
+      "distance (m)_m": 213.70000000000002,
+      "current_A": 1.69,
+      "speed_m/s": -0.8999999999999999,
+      "acceleration_m/s²": 0.694
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718640397000000",
+    "result": {
+      "voltage_V": 10.33,
+      "distance (m)_m": 212.70000000000002,
+      "current_A": 0.39,
+      "speed_m/s": -1.3399999999999999,
+      "acceleration_m/s²": 0.518
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718641080000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 246,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718641555000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718641892000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 2,
+      "acceleration_x_mg": 77,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718641985000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 201,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "dfef57b8-03cf-cb56-dce7-82e5341613a4",
+    "time": "1774718642648000000",
+    "result": {
+      "voltage_mV": 1.96875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 4,
+      "qualityStars_dimensionless": 3,
+      "acceleration_x_mg": 23,
+      "acceleration_y_mg": 41,
+      "rawLevel_mm": 814,
+      "propaneLevel_mm": 457.2,
+      "macAddress": "f2:eb:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718642707000000",
+    "result": {
+      "voltage_V": 10.65,
+      "distance (m)_m": 213.60000000000002,
+      "current_A": 0.269,
+      "speed_m/s": 1.48,
+      "acceleration_m/s²": 0.642
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718644011000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718644374000000",
+    "result": {
+      "packetId": 106,
+      "battery_percent": 35
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718644592000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 249,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "77d0b863-bdb9-e712-bb3b-c5b15959be20",
+    "time": "1774718644625000000",
+    "result": {
+      "temperature_C": 14.49,
+      "humidity_percent": 33.97,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 596,
+      "acceleration_y_mg": -824,
+      "acceleration_z_mg": -52,
+      "voltage_mV": 2275,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 236,
+      "measurementSequence_dimensionless": 11130,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718645023000000",
+    "result": {
+      "voltage_V": 11.950000000000001,
+      "distance (m)_m": 212.5,
+      "current_A": 0.73,
+      "speed_m/s": -1.44,
+      "acceleration_m/s²": 0.644
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718645510000000",
+    "result": {
+      "packetId": 109,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718646061000000",
+    "result": {
+      "voltage_mV": 2.8125,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 2,
+      "acceleration_y_mg": 237,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718646179000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8823e5ef-37d5-684a-61d2-0582a725f0e8",
+    "time": "1774718646235000000",
+    "result": {
+      "voltage_mV": 2.09375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 235,
+      "acceleration_y_mg": 88,
+      "rawLevel_mm": 172,
+      "propaneLevel_mm": 95.12,
+      "macAddress": "fa:09:b7"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718646483000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.175,
+      "pressure_Pa": 91684,
+      "acceleration_x_mg": 764,
+      "acceleration_y_mg": 364,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64950,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718646654000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 28,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718646879000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718647181000000",
+    "result": {
+      "voltage_V": 11.290000000000001,
+      "distance (m)_m": 213,
+      "current_A": 0.44,
+      "speed_m/s": 0.8999999999999999,
+      "acceleration_m/s²": 0.316
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718647754000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.1875,
+      "pressure_Pa": 91684,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64951,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718648332000000",
+    "result": {
+      "temperature_C": 18.64,
+      "humidity_percent": 27.015,
+      "pressure_Pa": 91660,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 0,
+      "acceleration_z_mg": 1072,
+      "voltage_mV": 2974,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23921,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718648340000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718649040000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.1875,
+      "pressure_Pa": 91684,
+      "acceleration_x_mg": 776,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -576,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64951,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718649409000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "aa06218b-d30a-9150-b69e-866cec951617",
+    "time": "1774718649572000000",
+    "result": {
+      "voltage_mV": 2.84375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 22,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 250,
+      "acceleration_y_mg": 245,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "42:fd:86"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718650320000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.1675,
+      "pressure_Pa": 91682,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64952,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718650558000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 28,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718650563000000",
+    "result": {
+      "voltage_V": 10.120000000000001,
+      "distance (m)_m": 213.8,
+      "current_A": 0.61,
+      "speed_m/s": 0.45999999999999996,
+      "acceleration_m/s²": 0.376
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718651621000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 244,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718652044000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718652521000000",
+    "result": {
+      "packetId": 107,
+      "battery_percent": 35
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "0ec428c3-0384-bbe8-5e27-6eadb4b798de",
+    "time": "1774718653362000000",
+    "result": {
+      "packetId": 110,
+      "battery_percent": 100
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718653611000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 2,
+      "acceleration_x_mg": 77,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718653728000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718653905000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "a7a8fa8e-399b-c89f-4f6a-df27867d1788",
+    "time": "1774718654459000000",
+    "result": {
+      "voltage_mV": 2,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 8,
+      "qualityStars_dimensionless": 1,
+      "acceleration_x_mg": 62,
+      "acceleration_y_mg": 28,
+      "rawLevel_mm": 2030,
+      "propaneLevel_mm": 1116.76,
+      "macAddress": "91:78:e2"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718654877000000",
+    "result": {
+      "voltage_V": 12.790000000000001,
+      "distance (m)_m": 213.8,
+      "current_A": 1.18,
+      "speed_m/s": 1.5599999999999998,
+      "acceleration_m/s²": 0.69
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718655472000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1675,
+      "pressure_Pa": 91698,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 376,
+      "acceleration_z_mg": -580,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64954,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718655889000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718656895000000",
+    "result": {
+      "voltage_V": 9.74,
+      "distance (m)_m": 213.4,
+      "current_A": 1.55,
+      "speed_m/s": 0.8999999999999999,
+      "acceleration_m/s²": 0.31
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "e24a9d95-2a4e-0817-d446-d07a56bcb9b9",
+    "time": "1774718657336000000",
+    "result": {
+      "temperature_C": 18.64,
+      "humidity_percent": 27.015,
+      "pressure_Pa": 91660,
+      "acceleration_x_mg": -4,
+      "acceleration_y_mg": 0,
+      "acceleration_z_mg": 1072,
+      "voltage_mV": 2974,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 208,
+      "measurementSequence_dimensionless": 23921,
+      "macAddress": "e4:32:87:19:b4:c9"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718657519000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 2,
+      "acceleration_x_mg": 77,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "90236cff-c606-323f-66c3-8314856d6049",
+    "time": "1774718657611000000",
+    "result": {
+      "voltage_mV": 2.1875,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 156,
+      "acceleration_y_mg": 201,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "a0:a1:d7"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718658037000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "9179c4ff-47ad-53ee-f6b1-e8a09e8a70b0",
+    "time": "1774718658643000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 19,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 242,
+      "acceleration_y_mg": 240,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "6e:8d:17"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718659202000000",
+    "result": {
+      "voltage_V": 12.38,
+      "distance (m)_m": 212,
+      "current_A": 1.76,
+      "speed_m/s": 2.079999,
+      "acceleration_m/s²": 0.44799999999999995
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718660205000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718660218000000",
+    "result": {
+      "packetId": 108,
+      "battery_percent": 35
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "8c8c59dd-63c8-b9cc-6a6d-a4aae4161cd1",
+    "time": "1774718660929000000",
+    "result": {
+      "voltage_mV": 2.75,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 15,
+      "qualityStars_dimensionless": 0,
+      "acceleration_x_mg": 128,
+      "acceleration_y_mg": 127,
+      "rawLevel_mm": 0,
+      "propaneLevel_mm": 0,
+      "macAddress": "9b:ea:a3"
+    }
+  },
+  {
+    "decoderName": "mopeka",
+    "id": "4d32cf1c-6e29-06a6-bd40-5dba3183f3cb",
+    "time": "1774718661420000000",
+    "result": {
+      "voltage_mV": 1.9375,
+      "syncPressed_dimensionless": false,
+      "temperature_C": 7,
+      "qualityStars_dimensionless": 2,
+      "acceleration_x_mg": 77,
+      "acceleration_y_mg": 23,
+      "rawLevel_mm": 950,
+      "propaneLevel_mm": 525.38,
+      "macAddress": "ca:12:55"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718661425000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "77d0b863-bdb9-e712-bb3b-c5b15959be20",
+    "time": "1774718662628000000",
+    "result": {
+      "temperature_C": 14.49,
+      "humidity_percent": 33.97,
+      "pressure_Pa": null,
+      "acceleration_x_mg": 596,
+      "acceleration_y_mg": -824,
+      "acceleration_z_mg": -52,
+      "voltage_mV": 2275,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 236,
+      "measurementSequence_dimensionless": 11130,
+      "macAddress": "c2:6e:d1:70:2b:44"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718663426000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718665206000000",
+    "result": {
+      "voltage_V": 10.96,
+      "distance (m)_m": 212.3,
+      "current_A": 1.17,
+      "speed_m/s": -0.88,
+      "acceleration_m/s²": 0.482
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718666430000000",
+    "result": {
+      "voltage_V": 10.17,
+      "distance (m)_m": 212.3,
+      "current_A": 1.61,
+      "speed_m/s": -1.42,
+      "acceleration_m/s²": 0.61
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718667036000000",
+    "result": {
+      "temperature_C": 7.385,
+      "humidity_percent": 65.1725,
+      "pressure_Pa": 91699,
+      "acceleration_x_mg": 772,
+      "acceleration_y_mg": 372,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64958,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718668201000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "e3e816e6-8192-74ad-8d39-edc6a28afaaa",
+    "time": "1774718668213000000",
+    "result": {
+      "packetId": 109,
+      "battery_percent": 93
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718669437000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774718670595000000",
+    "result": {
+      "voltage_V": 12.09,
+      "distance (m)_m": 213.9,
+      "current_A": 1.96,
+      "speed_m/s": 1.8599999999999999,
+      "acceleration_m/s²": 0.61
+    }
+  },
+  {
+    "decoderName": "ruuvi",
+    "id": "43ba075b-b678-39cc-5b38-d26982745151",
+    "time": "1774718670884000000",
+    "result": {
+      "temperature_C": 7.375,
+      "humidity_percent": 65.19500000000001,
+      "pressure_Pa": 91704,
+      "acceleration_x_mg": 768,
+      "acceleration_y_mg": 368,
+      "acceleration_z_mg": -572,
+      "voltage_mV": 2714,
+      "txPower_dBm": 4,
+      "movement_dimensionless": 89,
+      "measurementSequence_dimensionless": 64960,
+      "macAddress": "ea:29:c4:ac:f9:e5"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774719757268000000",
+    "result": {
+      "devicetype": 1,
+      "fwversion4": "4.2.1.0",
+      "fwversion3": "6.1.0"
+    }
+  },
+  {
+    "decoderName": "bthome",
+    "id": "da4d073d-3e67-6fef-fa52-a598a635cdf8",
+    "time": "1774719758273000000",
+    "result": {
+      "voltage_V": 9.13,
+      "distance (m)_m": 213.4,
+      "current_A": 1.47,
+      "speed_m/s": 0.519999,
+      "acceleration_m/s²": 0.482
+    }
+  }
+]

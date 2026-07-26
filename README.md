@@ -113,3 +113,27 @@ This repository is structured in two parts:
 - The [devices](devices/) folder, which contains decoders for each supported device. Devices must follow the Sensor BLE API, and should contain minimal external dependencies.
 
 - The [harness](harness/) folder, containing an implementation of the Sensor BLE API for use on desktop environments. You may find `node harness/main.js` useful for testing your BLE devices. The harness uses the `@abandonware/noble` bluetooth package, although the sensor ble decoders can be used with any reasonable bluetooth package.
+
+### Loading a Custom Decoder into Sensor Logger
+Decoders don't have to live in this repo. [Sensor Logger](https://www.tszheichoi.com/sensorlogger) can load a decoder from a URL at runtime, alongside the built-in ones. This is useful if you have a
+decoder you do not want to include in Sensor Logger by default, or if you want to develop and field-test a new decoder on a real device before contributing it back here.
+
+#### Steps
+1. Write a single, self-contained `.js` file that exports a `decoder` object following the [Sensor BLE API](#sensor-ble-api) above.
+2. Host it somewhere that serves the **raw** file over HTTPS. A [GitHub Gist](https://gist.github.com) is the easiest option. Any repo, server or pastebin works too, as long as the response body is plain JavaScript. With a Gist use, `https://gist.githubusercontent.com/<user>/<gist-id>/raw/<filename>.js`. If it is in a repo, use `https://raw.githubusercontent.com/<user>/<repo>/<branch>/<path>.js`.
+3. In Sensor Logger, go to **Settings → Device Settings → Custom Decoders → Add Decoder** and paste the URL.
+4. The app fetches the file, validates it, and registers the decoder immediately. It is saved on the device and re-registered on every launch, so it keeps working offline.
+5. Scan for your Bluetooth device as usual. Matching works exactly as for built-in decoders: by `manufacturer`, then `serviceUUID`, then `name`.
+
+> Make sure the URL points at the raw file. A GitHub `.../blob/...` link returns an HTML page, not JavaScript, and will fail validation. Each custom decoder has a refresh button, which re-fetches the file from the URL it was added with. Push a change, tap refresh, and the new version replaces the old one without re-entering the URL.
+
+#### What custom decoders may do
+Custom decoder code runs inside the app, so it is loaded in a restricted sandbox. Keep to these rules:
+
+- **No `import` or `require`.** The file must be entirely self-contained. `Buffer` and `console` are available as globals.
+- **No I/O or platform access.** The code runs in strict mode with certina functions blocked, such as 'fetch' or accessing storage. 
+- **One decoder per URL.** The file must export a single `decoder`.
+- **Required fields.** `decoderName` must be a non-empty string, and the decoder must define either an `advertisementDecode` function, or both a `start` function and a `notify` array. Anything else is rejected before it is saved.
+- If `decoderName` matches a built-in decoder, yours replaces it. Pick a distinctive name unless overriding is what you want.
+
+> Only add decoders from sources you trust. Custom decoder code runs inside the app on your data.

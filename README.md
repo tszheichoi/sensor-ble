@@ -2,6 +2,36 @@
 
 Sensor BLE supports decoding BLE advertisement data and streaming data from a variety of Bluetooth devices. This library is used in the [Sensor Logger](https://www.tszheichoi.com/sensorlogger) app. The device decoders are intentionally designed with no external dependencies, so that they can be used with any bluetooth library.
 
+### Supported Devices
+
+Sensor BLE can read data from the devices and protocols listed below. Decoders built on **Bluetooth SIG standard GATT services** (Heart Rate, Cycling Power, Cycling Speed & Cadence, Running Speed & Cadence) work with **any** device that implements the standard — the brands and models listed are non-exhaustive examples to aid discovery, not a compatibility guarantee. Decoders marked **Advertisement** read passively from broadcast data (no pairing required); those marked **Streaming** read from a GATT notification stream after connecting. Many fitness sensors are dual-band (ANT+ and BLE); only their BLE broadcast is used here, and a few devices expose data over ANT+ only.
+
+#### Motion / IMU
+
+| Sensor type | Decoder | Source | Example compatible devices |
+| --- | --- | --- | --- |
+| **WitMotion IMUs** (WitMotion BLE 5.0 protocol) | `witmotion` | Streaming | WitMotion WT901BLE, WT901BLECL, WT9011DCL-BT5.0, WT9011G4, and rebranded/clone IMUs that speak the WitMotion BLE 5.0 protocol. (Note: the classic-Bluetooth BWT901CL and wired HWT901B use a different WitMotion protocol and are **not** supported here.) |
+| **221e Muse** (Muse motion & environment sensor) | `musev3` | Streaming | 221e Muse (Muse v3) |
+
+#### Environmental & tracking (advertisement broadcasts)
+
+| Sensor type | Decoder | Source | Example compatible devices |
+| --- | --- | --- | --- |
+| **RuuviTag environmental sensors** | `ruuvi` | Advertisement | RuuviTag, RuuviTag Pro |
+| **BTHome v2 open-standard sensors** | `bthome` | Advertisement | Shelly BLU Button1, BLU Door/Window, BLU H&T, BLU Motion; b-parasite; ESPHome / ESP32 DIY sensors; many DIY BTHome devices |
+| **Xiaomi thermometers** (ATC1441 / pvvx custom firmware) | `xiaomi_atc` | Advertisement | Xiaomi Mijia LYWSD03MMC, MHO-C401; Qingping CGG1, CGDK2; and other Telink-based thermometer/hygrometers flashed with ATC1441 or pvvx custom firmware |
+| **Mopeka tank-level sensors** | `mopeka` | Advertisement | Mopeka Pro Check, Pro Check LP, Pro Check Universal, Pro Plus (the "Pro Check" propane-tank advertisement family) |
+| **Apple AirPods status** | `airpods` | Advertisement | Apple AirPods, AirPods Pro, AirPods Max, Beats (battery/status from the proprietary advertisement) |
+
+#### Cycling & Running (fitness)
+
+| Sensor type | Decoder | Source | Example compatible devices |
+| --- | --- | --- | --- |
+| **Heart Rate monitors** (BLE SIG `0x180D`) | `hrs` | Streaming | Polar H9, H10, Verity Sense; Garmin HRM-Dual, HRM-Pro Plus, HRM 600, HRM 200; Wahoo TICKR, TICKR FIT; Coospo HW9, H808S; Magene H64; Scosche Rhythm+ 2.0, Rhythm24; Movesense HR+; WHOOP (HR broadcast mode); most Bluetooth chest straps & optical armbands |
+| **Cycling Power meters** (BLE SIG `0x1818`) | `cps` | Streaming | Garmin Rally; Favero Assioma, Assioma Duo; Stages (L/LR/R); 4iiii Precision 3+; Quarq AXS/DZero; Power2Max NG/NGeco; Wahoo KICKR, Tacx NEO 2T, Zwift Hub, Elite Direto, and many smart trainers that expose cycling power |
+| **Cycling Speed & Cadence sensors** (BLE SIG `0x1816`) | `cscs` | Streaming | Garmin Speed Sensor 2, Cadence Sensor 2; Wahoo RPM; CooSpo BK467; Magene S3+; iGPSPORT; XOSS; generic CSC speed/cadence sensors |
+| **Running Speed & Cadence foot pods** (BLE SIG `0x1814`) | `rscs` | Streaming | Stryd (footpod/RSC mode); Garmin HRM-Pro Plus (broadcasts as a BLE footpod); Polar Stride Sensor; Zwift RunPod / MilestonePod |
+
 ### Using the library
 
 #### Decoding Advertisement Data

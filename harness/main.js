@@ -183,7 +183,7 @@ function find(services, serviceUuid, characteristicUuid) {
 
 function isDecoderValid(decoder, advertisement) {
   if (decoder.name && advertisement.localName) {
-    return decoder.name === advertisement.localName;
+    return advertisement.localName.indexOf(decoder.name) !== -1;
   }
   const manufacturerData = advertisement.manufacturerData;
   if (decoder.manufacturer && manufacturerData) {

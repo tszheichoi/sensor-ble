@@ -43,7 +43,7 @@ function decodeXiaomiAtc(_manufacturerData, serviceData) {
 /** @type {Decoder} */
 export const decoder = {
   decoderName: "xiaomi_atc",
-  name: "ATC",
+  name: null,
   manufacturer: null,
   serviceUUID: SERVICE_UUID,
   advertisementDecode: decodeXiaomiAtc,

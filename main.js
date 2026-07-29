@@ -9,5 +9,7 @@ import { decoder as cps } from "./devices/cps.js";
 import { decoder as rscs } from "./devices/rscs.js";
 import { decoder as witmotion } from "./devices/witmotion.js";
 import { decoder as xiaomi_atc } from "./devices/xiaomi_atc.js";
+import { decoder as mikrotik } from "./devices/mikrotik.js";
+import { decoder as qingping } from "./devices/qingping.js";
 
-export const decoders = [ruuvi, muse_v3, airpods, bthome, mopeka, cscs, hrs, cps, rscs, witmotion, xiaomi_atc];
+export const decoders = [ruuvi, muse_v3, airpods, bthome, mopeka, cscs, hrs, cps, rscs, witmotion, xiaomi_atc, mikrotik, qingping];

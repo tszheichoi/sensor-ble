@@ -8,29 +8,29 @@ Sensor BLE can read data from the devices and protocols listed below. Decoders b
 
 #### Motion / IMU
 
-| Sensor type | Decoder | Source | Example compatible devices |
-| --- | --- | --- | --- |
-| **WitMotion IMUs** (WitMotion BLE 5.0 protocol) | `witmotion` | Streaming | WitMotion WT901BLE, WT901BLECL, WT9011DCL-BT5.0, WT9011G4, and rebranded/clone IMUs that speak the WitMotion BLE 5.0 protocol. (Note: the classic-Bluetooth BWT901CL and wired HWT901B use a different WitMotion protocol and are **not** supported here.) |
-| **221e Muse** (Muse motion & environment sensor) | `musev3` | Streaming | 221e Muse (Muse v3) |
+| Sensor type                                      | Decoder     | Source    | Example compatible devices                                                                                                                                                                                                                                 |
+| ------------------------------------------------ | ----------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **WitMotion IMUs** (WitMotion BLE 5.0 protocol)  | `witmotion` | Streaming | WitMotion WT901BLE, WT901BLECL, WT9011DCL-BT5.0, WT9011G4, and rebranded/clone IMUs that speak the WitMotion BLE 5.0 protocol. (Note: the classic-Bluetooth BWT901CL and wired HWT901B use a different WitMotion protocol and are **not** supported here.) |
+| **221e Muse** (Muse motion & environment sensor) | `musev3`    | Streaming | 221e Muse (Muse v3)                                                                                                                                                                                                                                        |
 
 #### Environmental & tracking (advertisement broadcasts)
 
-| Sensor type | Decoder | Source | Example compatible devices |
-| --- | --- | --- | --- |
-| **RuuviTag environmental sensors** | `ruuvi` | Advertisement | RuuviTag, RuuviTag Pro |
-| **BTHome v2 open-standard sensors** | `bthome` | Advertisement | Shelly BLU Button1, BLU Door/Window, BLU H&T, BLU Motion; b-parasite; ESPHome / ESP32 DIY sensors; many DIY BTHome devices |
+| Sensor type                                              | Decoder      | Source        | Example compatible devices                                                                                                                           |
+| -------------------------------------------------------- | ------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **RuuviTag environmental sensors**                       | `ruuvi`      | Advertisement | RuuviTag, RuuviTag Pro                                                                                                                               |
+| **BTHome v2 open-standard sensors**                      | `bthome`     | Advertisement | Shelly BLU Button1, BLU Door/Window, BLU H&T, BLU Motion; b-parasite; ESPHome / ESP32 DIY sensors; many DIY BTHome devices                           |
 | **Xiaomi thermometers** (ATC1441 / pvvx custom firmware) | `xiaomi_atc` | Advertisement | Xiaomi Mijia LYWSD03MMC, MHO-C401; Qingping CGG1, CGDK2; and other Telink-based thermometer/hygrometers flashed with ATC1441 or pvvx custom firmware |
-| **Mopeka tank-level sensors** | `mopeka` | Advertisement | Mopeka Pro Check, Pro Check LP, Pro Check Universal, Pro Plus (the "Pro Check" propane-tank advertisement family) |
-| **Apple AirPods status** | `airpods` | Advertisement | Apple AirPods, AirPods Pro, AirPods Max, Beats (battery/status from the proprietary advertisement) |
+| **Mopeka tank-level sensors**                            | `mopeka`     | Advertisement | Mopeka Pro Check, Pro Check LP, Pro Check Universal, Pro Plus (the "Pro Check" propane-tank advertisement family)                                    |
+| **Apple AirPods status**                                 | `airpods`    | Advertisement | Apple AirPods, AirPods Pro, AirPods Max, Beats (battery/status from the proprietary advertisement)                                                   |
 
 #### Cycling & Running (fitness)
 
-| Sensor type | Decoder | Source | Example compatible devices |
-| --- | --- | --- | --- |
-| **Heart Rate monitors** (BLE SIG `0x180D`) | `hrs` | Streaming | Polar H9, H10, Verity Sense; Garmin HRM-Dual, HRM-Pro Plus, HRM 600, HRM 200; Wahoo TICKR, TICKR FIT; Coospo HW9, H808S; Magene H64; Scosche Rhythm+ 2.0, Rhythm24; Movesense HR+; WHOOP (HR broadcast mode); most Bluetooth chest straps & optical armbands |
-| **Cycling Power meters** (BLE SIG `0x1818`) | `cps` | Streaming | Garmin Rally; Favero Assioma, Assioma Duo; Stages (L/LR/R); 4iiii Precision 3+; Quarq AXS/DZero; Power2Max NG/NGeco; Wahoo KICKR, Tacx NEO 2T, Zwift Hub, Elite Direto, and many smart trainers that expose cycling power |
-| **Cycling Speed & Cadence sensors** (BLE SIG `0x1816`) | `cscs` | Streaming | Garmin Speed Sensor 2, Cadence Sensor 2; Wahoo RPM; CooSpo BK467; Magene S3+; iGPSPORT; XOSS; generic CSC speed/cadence sensors |
-| **Running Speed & Cadence foot pods** (BLE SIG `0x1814`) | `rscs` | Streaming | Stryd (footpod/RSC mode); Garmin HRM-Pro Plus (broadcasts as a BLE footpod); Polar Stride Sensor; Zwift RunPod / MilestonePod |
+| Sensor type                                              | Decoder | Source    | Example compatible devices                                                                                                                                                                                                                                   |
+| -------------------------------------------------------- | ------- | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Heart Rate monitors** (BLE SIG `0x180D`)               | `hrs`   | Streaming | Polar H9, H10, Verity Sense; Garmin HRM-Dual, HRM-Pro Plus, HRM 600, HRM 200; Wahoo TICKR, TICKR FIT; Coospo HW9, H808S; Magene H64; Scosche Rhythm+ 2.0, Rhythm24; Movesense HR+; WHOOP (HR broadcast mode); most Bluetooth chest straps & optical armbands |
+| **Cycling Power meters** (BLE SIG `0x1818`)              | `cps`   | Streaming | Garmin Rally; Favero Assioma, Assioma Duo; Stages (L/LR/R); 4iiii Precision 3+; Quarq AXS/DZero; Power2Max NG/NGeco; Wahoo KICKR, Tacx NEO 2T, Zwift Hub, Elite Direto, and many smart trainers that expose cycling power                                    |
+| **Cycling Speed & Cadence sensors** (BLE SIG `0x1816`)   | `cscs`  | Streaming | Garmin Speed Sensor 2, Cadence Sensor 2; Wahoo RPM; CooSpo BK467; Magene S3+; iGPSPORT; XOSS; generic CSC speed/cadence sensors                                                                                                                              |
+| **Running Speed & Cadence foot pods** (BLE SIG `0x1814`) | `rscs`  | Streaming | Stryd (footpod/RSC mode); Garmin HRM-Pro Plus (broadcasts as a BLE footpod); Polar Stride Sensor; Zwift RunPod / MilestonePod                                                                                                                                |
 
 ### Using the library
 
@@ -44,7 +44,7 @@ const ruuviDecoder = decoders.find((d) => d.decoderName === "ruuvi");
 // Example Ruuvi tag data
 const manufacturerData = Buffer.from(
   "99040512FC5394C37C0004FFFC040CAC364200CDCBB8334C884F",
-  "hex"
+  "hex",
 );
 // Decode the data
 console.log(ruuviDecoder.advertisementDecode(manufacturerData));
@@ -73,7 +73,6 @@ To add support for a new device:
 Each device decoder must export:
 
 1. A `decoder` object that implements the [Decoder](types.js) interface:
-
    - `decoderName`: A unique identifier for the decoder
    - `name` (optional): If specified, the BLE device name must match this for the decoder to apply
    - `manufacturer` (optional): If specified, the BLE manufacturer data must begin with this 2-byte manufacturer ID (in hex string form e.g. "9904")
@@ -145,11 +144,13 @@ This repository is structured in two parts:
 - The [harness](harness/) folder, containing an implementation of the Sensor BLE API for use on desktop environments. You may find `node harness/main.js` useful for testing your BLE devices. The harness uses the `@abandonware/noble` bluetooth package, although the sensor ble decoders can be used with any reasonable bluetooth package.
 
 ### Loading a Custom Decoder into Sensor Logger
+
 Decoders don't have to live in this repo. [Sensor Logger](https://www.tszheichoi.com/sensorlogger) can load a decoder from a URL at runtime, alongside the built-in ones. This is useful if you have a
 decoder you do not want to include in Sensor Logger by default, or if you want to develop and field-test a new decoder on a real device before contributing it back here.
 
 #### Steps
-1. Write a single, self-contained `.js` file that exports a `decoder` object following the [Sensor BLE API](#sensor-ble-api) above.
+
+1. Write a single, self-contained `.js` file that exports a `decoder` object following the [Sensor BLE API](#sensor-ble-api) above. To load many decoders at once, export a `decoders` array instead (see [Loading many decoders from one file](#loading-many-decoders-from-one-file)).
 2. Host it somewhere that serves the **raw** file over HTTPS. A [GitHub Gist](https://gist.github.com) is the easiest option. Any repo, server or pastebin works too, as long as the response body is plain JavaScript. With a Gist use, `https://gist.githubusercontent.com/<user>/<gist-id>/raw/<filename>.js`. If it is in a repo, use `https://raw.githubusercontent.com/<user>/<repo>/<branch>/<path>.js`.
 3. In Sensor Logger, go to **Settings → Device Settings → Custom Decoders → Add Decoder** and paste the URL.
 4. The app fetches the file, validates it, and registers the decoder immediately. It is saved on the device and re-registered on every launch, so it keeps working offline.
@@ -158,12 +159,55 @@ decoder you do not want to include in Sensor Logger by default, or if you want t
 > Make sure the URL points at the raw file. A GitHub `.../blob/...` link returns an HTML page, not JavaScript, and will fail validation. Each custom decoder has a refresh button, which re-fetches the file from the URL it was added with. Push a change, tap refresh, and the new version replaces the old one without re-entering the URL.
 
 #### What custom decoders may do
+
 Custom decoder code runs inside the app, so it is loaded in a restricted sandbox. Keep to these rules:
 
 - **No `import` or `require`.** The file must be entirely self-contained. `Buffer` and `console` are available as globals.
-- **No I/O or platform access.** The code runs in strict mode with certina functions blocked, such as 'fetch' or accessing storage. 
-- **One decoder per URL.** The file must export a single `decoder`.
+- **No I/O or platform access.** The code runs in strict mode with certain functions blocked, such as 'fetch' or accessing storage.
+- **Export `decoder` or `decoders`.** The file must export either a single `decoder` object, or a `decoders` array of them with `export const decoders = [...]`.
 - **Required fields.** `decoderName` must be a non-empty string, and the decoder must define either an `advertisementDecode` function, or both a `start` function and a `notify` array. Anything else is rejected before it is saved.
 - If `decoderName` matches a built-in decoder, yours replaces it. Pick a distinctive name unless overriding is what you want.
 
 > Only add decoders from sources you trust. Custom decoder code runs inside the app on your data.
+
+#### Loading many decoders from one file
+
+If you have many decoders, combine them into one file and export them as a `decoders` array. Sensor Logger then loads all of them from a single URL, and they appear as one entry that you refresh or delete together.
+
+If combining multiple existing decoders, you may wish to wrap each decoder in its own function, as below. Each decoder's helpers then stay private to it, so two decoders can both have a helper called `scale` without interfering with each other.
+
+```javascript
+const acmeThermometer = (() => {
+  function scale(raw) {
+    return raw / 100;
+  }
+  return {
+    decoderName: "acme_thermometer",
+    manufacturer: "ffff",
+    advertisementDecode(manufacturerData) {
+      return { temperature_c: scale(manufacturerData.readInt16LE(2)) };
+    },
+  };
+})();
+
+const acmeHygrometer = (() => {
+  function scale(raw) {
+    return raw / 10;
+  }
+  return {
+    decoderName: "acme_hygrometer",
+    name: "ACME-HYG",
+    advertisementDecode(manufacturerData) {
+      return { humidity_percent: scale(manufacturerData.readUInt16LE(2)) };
+    },
+  };
+})();
+
+export const decoders = [acmeThermometer, acmeHygrometer];
+```
+
+- **All or nothing.** Every decoder in the array is checked against the rules above, and each `decoderName` must be unique within the file. If any decoder fails, the whole file is rejected.
+- **No repeated top-level names.** If two decoders each declare a top-level `function` with the same name, Sensor Logger rejects the file with an error such as `Identifier 'scale' is already declared`, rather than letting the later one silently replace the earlier. A repeated top-level `var` is not caught, so use `const` or `let`, or wrap each decoder as shown above.
+- **Order matters.** Sensor Logger picks a decoder in three passes: first any decoder whose `manufacturer` matches, then any whose `serviceUUID` matches, then any whose `name` appears in the device name. Each pass tries built-in decoders first, then custom decoders in the order they were added, and a file's decoders in array order. So a custom decoder that matches by `manufacturer` wins over a built-in that only matches by `serviceUUID`. If two decoders share a `manufacturer` code, only the first one is ever used, and giving the other one a `serviceUUID` or `name` does not help, because the `manufacturer` pass runs first. Decode devices that share a code in one decoder that tells them apart from the data, or leave `manufacturer` unset and match on `serviceUUID` or `name` instead.
+- **Replacing decoders you added one by one.** If a new file contains every decoder from a file you added earlier, the new file replaces the earlier one. You can therefore move from many single-decoder URLs to one combined file without deleting each entry first. If a file contains a `decoderName` that another file still provides, it is rejected until you remove the duplicate.
+- **Older app versions** before 1.67 only accept a single `decoder` and will reject a file that exports `decoders`.

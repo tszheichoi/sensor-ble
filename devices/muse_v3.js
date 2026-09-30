@@ -63,14 +63,16 @@ function computeAcquisitionMode(hardware, software) {
   addSensor(hardware & 0x0010 && hardware & 0x0020, 0x40); // Temp + Humidity
   addSensor(hardware & 0x0040, 0x80); // Temp + Pressure
   addSensor(hardware & 0x0380, 0x100); // Range + Light
-  addSensor(hardware & 0x0400, 0x400); // Microphone
+  // Microphone (mode 0x400) is deliberately not requested: onDataCharacteristic
+  // doesn't decode it, and firmware 1.7.26 rejects a direct-stream start that
+  // includes it (status 01, no data).
 
   // Valid packet dimensions strictly enforced by the Muse v3 firmware
   const validSizes = [6, 12, 24, 30, 60];
   const targetSize = validSizes.find((s) => s >= size) || 60;
 
   // Pad with unused modes if we fall on an invalid size (e.g., 18, 36, 42, 48, 54 bytes)
-  const padFlags = [0x01, 0x02, 0x04, 0x08, 0x10, 0x40, 0x80, 0x100, 0x400];
+  const padFlags = [0x01, 0x02, 0x04, 0x08, 0x10, 0x40, 0x80, 0x100];
 
   for (const flag of padFlags) {
     if (size >= targetSize) break;
